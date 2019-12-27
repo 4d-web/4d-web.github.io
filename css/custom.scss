@@ -2,11 +2,25 @@
 $white: #fff;
 $yellow2: #FFC000;
 $yellow: #ffd700;
-
-
-/* ========= COLORS ========= */
+$gray: #5c5c5c;
+/* ========= END COLORS ========= */
 
 /* ========= BUTTONS ========= */
+.btn {
+    
+}
+
+.btn:hover {
+    
+}
+
+.input:active {
+    
+}
+
+/* ========= BUTTONS END ========= */
+
+/* ========= INPUTS ========= */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -16,30 +30,22 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
-    transition: background-color 5000s ease-in-out 0s;
+-webkit-box-shadow: 0 0 0px 1000px #ededed inset;
+transition: background-color 5000s ease-in-out 0s;
 }
 
-.button-1 {}
-
-.button-1:hover {}
-
-/* ========= BUTTONS END ========= */
-
-/* ========= INPUTS ========= */
-.input-s-1 {}
-
-.input-s-1:focus {}
-
-.input-s-1::placeholder {}
-
-/* search */
-.input-search {}
-
-.input-search:focus {}
-
-.input-search::placeholder {}
-
+.input {
+    &:hover {
+    
+    }
+    
+    &:focus {
+        
+    }
+    &::placeholder {
+        
+    }
+}
 /* ========= INPUTS END ========= */
 
 /* ========= CONTENT ========= */
@@ -53,8 +59,7 @@ main {
     margin: 0 auto;
     overflow: hidden;
 }
-
-/* ========= CONTENT END */
+/* ========= CONTENT END ========= */
 
 /* ========= MENU ========= */
 .section-menu,
@@ -124,7 +129,7 @@ main {
                     width: 4px;
                     height: 15px;
                     border-radius: 10px;
-                    background: #5c5c5c;
+                    background: $gray;
                     position: absolute;
                     top: 13px;
                     left: 8px;
@@ -160,8 +165,9 @@ main {
         }
     }
 }
+/* ========= MENU END ========= */
 
-/* index_main_section */
+/* ========= HOME PAGE MAIN SECTION ========= */
 .index_main_section {
     height: 720px;
     background-image: url(../images/img/index_main_bg.jpg);
@@ -199,8 +205,11 @@ main {
     }
 }
 
-/* index_main_section */
+/* ========= END HOME PAGE MAIN SECTION ========= */
 
+/* |||||||||| ABOUT ME PAGE |||||||||| */
+
+/* |||||||||| END ABOUT ME PAGE |||||||||| */
 
 /* MEDIA */
 html {

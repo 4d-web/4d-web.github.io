@@ -1,6 +1,8 @@
 /* ========= COLORS ========= */
-/* ========= COLORS ========= */
+/* ========= END COLORS ========= */
 /* ========= BUTTONS ========= */
+/* ========= BUTTONS END ========= */
+/* ========= INPUTS ========= */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -13,9 +15,6 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
   transition: background-color 5000s ease-in-out 0s; }
 
-/* ========= BUTTONS END ========= */
-/* ========= INPUTS ========= */
-/* search */
 /* ========= INPUTS END ========= */
 /* ========= CONTENT ========= */
 main {
@@ -27,7 +26,7 @@ main {
   margin: 0 auto;
   overflow: hidden; }
 
-/* ========= CONTENT END */
+/* ========= CONTENT END ========= */
 /* ========= MENU ========= */
 .nav-menu {
   padding-left: 20px;
@@ -99,7 +98,8 @@ main {
   .main_nav_menu .title > a > span {
     color: #FFC000; }
 
-/* index_main_section */
+/* ========= MENU END ========= */
+/* ========= HOME PAGE MAIN SECTION ========= */
 .index_main_section {
   height: 720px;
   background-image: url(../images/img/index_main_bg.jpg);
@@ -130,7 +130,9 @@ main {
     text-align: center;
     text-transform: uppercase; }
 
-/* index_main_section */
+/* ========= END HOME PAGE MAIN SECTION ========= */
+/* |||||||||| ABOUT ME PAGE |||||||||| */
+/* |||||||||| END ABOUT ME PAGE |||||||||| */
 /* MEDIA */
 html {
   /*    min-width: 1024px;*/ }
