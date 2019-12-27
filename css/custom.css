@@ -17,8 +17,13 @@ select:-webkit-autofill:focus {
 
 /* ========= INPUTS END ========= */
 /* ========= CONTENT ========= */
+body {
+  background: #1E1E1E; }
+
 main {
-  min-height: 400px; }
+  min-height: 400px;
+  padding-top: 140px;
+  background: #1E1E1E; }
 
 .content {
   max-width: 1366px;
@@ -33,24 +38,23 @@ main {
   padding-right: 20px;
   align-items: center;
   display: flex; }
-
-.nav-menu > .nav-item {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%; }
-  .nav-menu > .nav-item > li {
-    min-width: 50px; }
-    .nav-menu > .nav-item > li > a {
-      display: flex;
-      align-items: center;
-      padding: 10px; }
-.nav-menu .nav-item.left {
-  display: flex;
-  justify-content: flex-start; }
-.nav-menu .nav-item.right {
-  display: flex;
-  justify-content: flex-end; }
+  .nav-menu > .nav-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+    .nav-menu > .nav-item > li {
+      min-width: 50px; }
+      .nav-menu > .nav-item > li > a {
+        display: flex;
+        align-items: center;
+        padding: 10px; }
+  .nav-menu .nav-item.left {
+    display: flex;
+    justify-content: flex-start; }
+  .nav-menu .nav-item.right {
+    display: flex;
+    justify-content: flex-end; }
 
 /* menu custom */
 .main_nav_menu .nav-menu,
@@ -60,7 +64,8 @@ main {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 100; }
+  z-index: 100;
+  background: #1E1E1E; }
 
 .main_nav_menu .nav-item.right > li {
   position: relative; }
