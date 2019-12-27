@@ -1,0 +1,325 @@
+.mainStyle b {
+    font-weight: 600;
+}
+
+/* MAIN STYLES */
+.mainStyle {
+    color: #757575;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.mainStyle h1,
+.mainStyle h2,
+.mainStyle h3,
+.mainStyle h4,
+.mainStyle h5,
+.mainStyle h6,
+.mainStyle p,
+.mainStyle li,
+.mainStyle a,
+.mainStyle span,
+.mainStyle div {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.mainStyle h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 14px 0 32px 0;
+}
+
+.mainStyle h2,
+.mainStyle h2 a {
+    margin: .5em 0;
+    font-size: 42px;
+    line-height: 1.1em;
+    font-weight: 400;
+}
+
+.mainStyle h3 {
+    font-size: 36px;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+
+.mainStyle h4 {
+    margin: .5em 0;
+    font-size: 30px;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+
+.mainStyle p,
+.mainStyle li,
+.mainStyle span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.mainStyle p {
+  line-height: 25px;
+  color: #757575;
+  /*text-indent: 20px;*/
+}
+
+.mainStyle ol {
+    counter-reset: item !important;
+    padding-left: 0;
+}
+
+.mainStyle ul li::after {
+    content: url(images/check-square.png);
+    width: 12px;
+    position: absolute;
+    height: 12px;
+    left: 0;
+    top: 0px;
+    display: block;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.mainStyle ol li::before {
+    content: counter(item, decimal-leading-zero) " ";
+    counter-increment: item;
+    color: #757575;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    height: 0;
+    width: 0;
+    top: 0px;
+    background: none;
+    font-weight: 600;
+}
+
+.mainStyle .fl-box li::before {
+    left: 0px;
+}
+
+.mainStyle .fl-box ol li {
+    padding-left: 30px;
+}
+
+.mainStyle .fl-box ol li, .mainStyle .fl-box ul li {
+  display: flex;
+}
+
+.mainStyle ul li,
+.mainStyle ol li {
+    position: relative;
+    line-height: 24px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.mainStyle ol li {
+  padding-left: 30px;
+}
+
+.mainStyle ol li span, .mainStyle ul li span {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.mainStyle ol li p, .mainStyle ul li p{
+  text-indent: 0px;
+  margin-bottom: 0;
+}
+
+.mainStyle ul,
+.mainStyle ol {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.mainStyle .fl-box ul,
+.mainStyle .fl-box ol {
+   padding-left: 0px;
+}
+
+.mainStyle ul li:not(:last-child),
+.mainStyle ol li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.mainStyle a {
+  text-decoration: none;
+}
+
+.mainStyle a:active,
+.mainStyle a:hover {
+  text-decoration: underline;
+}
+
+.edit-link a:hover {
+  text-decoration: none;
+}
+
+.mainStyle figure {
+  text-align: center;
+}
+
+.mainStyle figcaption {
+  display: inline-block;
+}
+
+.mainStyle .figcaption {
+  width: 100%;
+}
+
+.mainStyle .figcaption, .mainStyle figcaption {
+  font-size: 12px;
+  padding: 0 20px;
+}
+
+.mainStyle .dfc-img {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+.mainStyle .dfc-img figcaption {
+  width: 100%;
+}
+
+.mainStyle .dfc-img p {
+  width: 438px;
+  display: flex;
+  height: 270px;
+  margin: 8px 8px;
+}
+
+.mainStyle .dfc-img a {
+    height: 100%;
+    width: 100%;
+}
+
+.mainStyle .dfc-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.b-figcaption-a {
+  position: relative;
+  display: inline-block;
+}
+
+.b-figcaption-a p {
+  margin: 0;
+}
+
+.mainStyle .b-figcaption-a figcaption {
+  text-indent: 0;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 0px;
+  position: absolute; 
+  left: 0;
+  bottom: 0;
+  background: #000000a1;
+  color: #ffffff;
+}
+
+.mainStyle .b-figcaption-a p {
+  margin: 0;
+}
+
+.b-ptb {
+  padding: 30px 0px;
+}
+
+.b-pt {
+  padding: 30px 0px 0px 0px;
+}
+
+.b-pb {
+  padding: 0px 0px 30px 0px;
+}
+
+.mainStyle .tar {text-align: right;}
+.mainStyle .tal {text-align: left;}
+.mainStyle .tac {text-align: center; text-indent: 0px;}
+
+.mainStyle .fr {
+    text-indent: 0px;
+    float: right;
+    margin: 10px 0px 0px 15px;
+}
+
+.mainStyle .fl {
+    text-indent: 0px;
+    float: left;
+    margin: 6px 15px 6px 0px;
+}
+
+.mainStyle .b-img {
+  text-indent: 0px !important;
+}
+
+.mainStyle .b-img img {
+  width: auto;
+  height: 180px;
+}
+
+.mainStyle .w100 {width: 100% !important;}
+
+.mainStyle li {
+  display: block;
+}
+
+.mainStyle .bold {
+    font-weight: bold;
+}
+
+.mainStyle .important {
+  text-indent: 0;
+  border-radius: 11px;
+  padding: 35px 35px 35px 90px;
+    border: 1px solid #d1eafe;
+  background: #f2f7f9;
+  position: relative;
+  display: block;
+}
+
+.mainStyle .fl-box .important {
+  display: flow-root;
+}
+
+.mainStyle .important::before {
+  position: absolute;
+  content: "";
+  top: 55px;
+  left: 0;
+  width: 90px;
+  height: 100%;
+  background-image: url(/images/icons/information.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 35px;
+}
+
+@media (max-width: 991px) {
+  .mainStyle .fl, .mainStyle .fr  {
+    margin: 10px;
+  }
+
+  .mainStyle .fl, .mainStyle .fr {
+      float: none;
+  }
+
+  .mainStyle .b-img {
+    text-align: center;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+  }
+}
+
+/* MAIN STYLES END */

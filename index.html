@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <!-- meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MAIN - INDEX PAGE</title>
+    <link rel="shortcut icon" href="images/icons/favicon.png">
+    <!-- meta end -->
+
+    <!-- styles -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mega-box.css">
+    <link rel="stylesheet" href="css/style-pages.css">
+    <!-- <link rel="stylesheet" href="css/boot-float.css">-->
+    <!-- styles end -->
+
+</head> 
+<body>
+    <header>
+        <section class="section-menu main_nav_menu">
+            <div class="content">
+                <nav class="nav-menu">
+                    <ul class="nav-item left">
+                        <li><h2 class="title"><a href="#"><span>4d</span>-web_ </a></h2></li>
+                    </ul>
+                    <ul class="nav-item right">
+                        <li><a href="#">About me</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                        <li><a href="#">Css presets</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>   
+    <main class="mainStyle">
+       <section class="index_main_section">
+            <div class="content">
+                <div class="index_main_item">
+                    <div class="title">
+                        <h1> my <br> resources</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="content">
+            <div class="b-baner-1 mega-box m-center-all m-col-3">
+                <div class="m-row">
+                    <div class="m-item-box m-col-2">
+                        <div class="m-item m-center-all"><img src="/images/service/01.png" alt=""></div>
+                        <div class="m-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, quis.</div>
+                    </div>
+                    <div class="m-item-box m-col-2">
+                        <div class="m-item">2</div> 
+                        <div class="m-item">2</div>  
+                    </div>
+                    <div class="m-item-box m-col-2">
+                        <div class="m-item">3</div>
+                        <div class="m-item">3</div>    
+                    </div>
+                    <div class="m-item-box m-col-2 sidebar">
+                        <div class="m-item">4</div>
+                        <div class="m-item">4</div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="content">
+            
+        </div>
+    </footer>
+
+    <!--Modal-window-->
+    <!-- Заказ звонка -->
+    <div id="callback" class="styleModalFix">
+        <div class="jsClose styleFade"></div>
+        <div class="styleModalWrap">
+            <div class="jsModalIn styleModalIn">
+                <div class="styleModalPage jsModalPage">
+                    <div class="styleClose">
+                        <div class="jsClose styleClose-box">
+                            <img class="close-modal-svg jsClose" src="images/icons_main/close-button.svg" alt="Закрыть">
+                        </div>
+                    </div>
+                    <div class="styleModalHead styleApp ">
+                        <p class="sm-head-p text-uppercase color-brown">Закажите консультацию</p>
+                        <span class="sm-head-span color-brown light">Отправьте нам заявку на бесплатную консультацию, и мы свяжемся с Вами в ближайшее время</span>
+                    </div>
+                    <div class="styleModalBody">
+                        <form class="forms fullwidth">
+                            <div class="form-new">
+                                <div class="group">
+                                    <div class="required-content">
+                                        <input class="input-style-2 " required data-error="Введите свое имя" name="name" type="text" value="" placeholder="Ваше имя">
+                                    </div>
+                                </div>
+
+                                <div class="group">
+                                    <div class="required-content">
+                                        <input class="input-style-2 required mask" required id="phonemask" data-error="Введите номер телефона" name="phone" type="text" value="" placeholder="Ваш телефон">
+                                    </div>
+                                </div>
+
+                                <div class="group">
+                                    <div class="required-content">
+                                        <input class="input-style-2 required" required data-error="Введите e-mail" name="email" type="text" value="" placeholder="Ваш e-mail">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="formId" value="1">
+                            <input type="hidden" name="subject" value="Заявка">
+                            <div class="text-center bt">
+                                <button id="#" class="button-modal button-style-1 bg-yellow-2 text-uppercase color-brown bold js-feedback">Заказать звонок</button>
+                                <div class="invisibleCaptcha"></div>
+                            </div>
+                            <input type="hidden" name="call_phone" value="yes">
+                            <input type="hidden" name="url_feedback" value="yes">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal-window-->
+    <div id="messages" class="styleModalFix">
+        <div class="styleModalWrap">
+            <div class="jsModalIn styleModalIn">
+                <div class="styleModalError jsModalPage">
+                    <div class="styleClose">
+                        <div class="jsClose styleClose-box">
+                            <img class="close-modal-svg jsClose" src="images/icons_main/close-button.svg" alt="Закрыть">
+                        </div>
+                    </div>
+                    <div class="jsClose styleClose"></div>
+                    <div class="styleModalBody">
+                        <ul>
+                            <li>Введите свое имя</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- <script src="js/main.js"></script> -->
+</body></html>
