@@ -18,6 +18,7 @@ select:-webkit-autofill:focus {
 /* ========= INPUTS END ========= */
 /* ========= CONTENT ========= */
 body {
+  height: 100vh;
   background: #1E1E1E; }
 
 main {
