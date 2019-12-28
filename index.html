@@ -89,11 +89,11 @@
                 history.pushState(state, title, dataHref);
                 //                window.history.pushState({"html":href},"");
             }
-
-            if (dataHref != '#' & dataHref != '/') {
+            
+            if (dataHref != '#' && dataHref != '/' && dataHref != '/index.html') {
                 getFile = dataHref + "index.html"
                 getPage(getFile, dataHref)
-            } else if (dataHref == '/') {
+            } else if (dataHref == '/' || dataHref == '/index.html') {
                 getFile = '/main.html'
                 getPage(getFile, dataHref)
             }
