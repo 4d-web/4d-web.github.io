@@ -2,6 +2,7 @@ npm i yarn -g
 npm i typescript
 npm i react
 
+yarn add react
 
 yarn ---
 yarn add express
