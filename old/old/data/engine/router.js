@@ -1,9 +1,9 @@
 import React from 'react'
 import config from '../../config'
-import App from './App'
-import Home from '/catalog/view/theme/default/template/common/home'
-// import Info from '/catalog/view/theme/default/template/info/info'
-// import NotFound from '/catalog/view/theme/default/template/errors/NotFound'
+import App from './../../App'
+import Home from './../../catalog/view/theme/default/template/common/home'
+import Info from '../../catalog/view/theme/default/template/info/info'
+import NotFound from '../../catalog/view/theme/default/template/errors/NotFound'
 
 export default [
     {

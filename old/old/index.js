@@ -1,5 +1,5 @@
 import React from 'react'
-import Routes from './src/engine/router.jsx'
+import Routes from './data/engine/router.js'
 import ReactDOM from 'react-dom'
 import {Router} from 'react-router-dom'
 import {renderRoutes} from 'react-router-config'
