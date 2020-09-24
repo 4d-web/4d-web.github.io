@@ -2,7 +2,10 @@ npm i yarn -g
 npm i typescript
 npm i react
 
-yarn add react
+npm i -g create-react-app
+
+yarn add react-router-dom bootstrap
+
 
 yarn ---
 yarn add express
