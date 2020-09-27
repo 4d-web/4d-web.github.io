@@ -1,0 +1,49 @@
+// настройка
+$ git config --global user.name "FALL4G"
+$ git config --global user.email "aybaksua@gmail.com"
+$ git config --list
+// подключеие
+git remote add origin https://github.com/Fall4G/node.git
+git remote add origin https://github.com/F0RTI/node.git
+/// текущее подключение
+git remote -v
+/// удаление пространства
+git remote rm origin
+// добавление
+git add .
+// статус файлов
+git status
+// модификация
+git commit -m 'COMMIT'
+// загрузка
+git push -u origin master
+// не удалось загрузить "почитать"
+git push -f origin master
+git push
+// удаление файла
+git rm -r --cached folderName
+// инициализация
+git init
+// просмотр папки
+ls
+// история/проверка изминений
+git pull
+
+Ваша последовательность действий должна быть следующей:
+Забрать изменения из удалённой ветки:
+
+git pull
+Далее, необходимо разрешить конфликты (смёржить изменения), если таковые присутствуют. Для этого надо воспользоваться следующей командой:
+
+git mergetool
+Если конфликты были и вы их разрешили, то Вам нужно будет создать новый коммит, который будет содержать исправление конфликтов:
+
+git commit
+Вы можете выполнить отправку своих изменений:
+
+git push
+
+ssh ----
+1. ssh-keygen
+2. Копируем код в GIT аккаунт
+3. Зпускаем по SSH $ git clone ...

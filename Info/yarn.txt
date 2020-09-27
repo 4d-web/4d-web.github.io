@@ -1,0 +1,25 @@
+npm i yarn -g
+npm i typescript
+npm i react
+
+npm i -g create-react-app
+
+yarn add react-router-dom bootstrap
+
+
+yarn ---
+yarn add express
+yarn add --dev nodemon
+yarn add express-handlebars
+yarn add react-router-dom
+
+// инициализация нового пакета or 'fast init'
+yarn init / yarn init -y
+// установить пакет
+yarn add jquery
+// обновить пакет
+yarn upgrade jquery
+// удалить пакет
+yarn remove jquery
+// установить все зависимости проэкта
+yarn / yarn install

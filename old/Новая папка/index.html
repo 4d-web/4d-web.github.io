@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>SVG to JSON and JSON to SVG converter</title>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="row">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <h4 class="header">SVG to JSON and JSON to SVG converter</h4>
+        </div>
+      </nav>
+    </div>
+
+    <div class="col s5 center-align">
+      <div class="marginTop">Raw SVG</div>
+      <textarea class="textarea" id="svgText">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M35.4262 39.3509L32.3012 10.5523C32.269 10.255 32.0179 10.0297 31.7187 10.0297H27.237V7.23023C27.237 3.24352 23.9905 0 20 0C16.0094 0 12.7629 3.24352 12.7629 7.23023V10.0297H8.28122C7.98208 10.0297 7.73099 10.255 7.69872 10.5523L7.21067 15.05C7.17575 15.3717 7.40825 15.6609 7.72997 15.6958C7.75146 15.6981 7.77278 15.6993 7.79388 15.6993C8.08911 15.6993 8.3431 15.4767 8.37567 15.1766L8.807 11.2016H12.7629V14.2648C12.7629 15.2334 13.5515 16.0214 14.5208 16.0214C15.49 16.0214 16.2786 15.2334 16.2786 14.2648V11.2016H23.7215V14.2648C23.7215 15.2334 24.51 16.0214 25.4793 16.0214C26.4486 16.0214 27.2371 15.2334 27.2371 14.2648V11.2016H31.193L33.7672 34.9239H27.9239C27.6003 34.9239 27.3379 35.1862 27.3379 35.5098C27.3379 35.8335 27.6003 36.0958 27.9239 36.0958H33.8943L34.1908 38.8281H5.80919L6.10567 36.0957H25.1725C25.4961 36.0957 25.7584 35.8334 25.7584 35.5098C25.7584 35.1861 25.4961 34.9238 25.1725 34.9238H6.23286L8.08591 17.8467C8.12083 17.5251 7.88833 17.2359 7.56661 17.201C7.24544 17.1657 6.95583 17.3985 6.92091 17.7202L4.9981 35.4402C4.99763 35.4444 4.99716 35.4485 4.99677 35.4527L4.5738 39.3509C4.55583 39.5163 4.60911 39.6815 4.72021 39.8053C4.83122 39.9293 4.98982 40 5.15622 40H34.8437C35.0101 40 35.1687 39.9293 35.2798 39.8054C35.3909 39.6816 35.4442 39.5163 35.4262 39.3509V39.3509ZM23.7214 10.0297H16.2785V7.23023C16.2785 5.1807 17.9479 3.5132 19.9999 3.5132C22.0518 3.5132 23.7213 5.1807 23.7213 7.23023V10.0297H23.7214ZM26.0651 14.2648C26.0651 14.5873 25.8023 14.8495 25.4792 14.8495C25.1561 14.8495 24.8933 14.5873 24.8933 14.2648V7.23023C24.8933 4.53445 22.6981 2.34133 20 2.34133C17.3018 2.34133 15.1067 4.53445 15.1067 7.23023V14.2648C15.1067 14.5873 14.8439 14.8495 14.5208 14.8495C14.1976 14.8495 13.9348 14.5873 13.9348 14.2648V7.23023C13.9348 3.88961 16.6556 1.17188 20 1.17188C23.3443 1.17188 26.0651 3.88961 26.0651 7.23023V14.2648Z" fill="black"/>
+          <path d="M25.1725 22.4186C25.4961 22.4186 25.7584 22.1563 25.7584 21.8326V20.1324C25.7584 19.8087 25.4961 19.5465 25.1725 19.5465H14.8275C14.5039 19.5465 14.2415 19.8087 14.2415 20.1324V30.4763C14.2415 30.8 14.5039 31.0623 14.8275 31.0623H25.1725C25.4961 31.0623 25.7584 30.8 25.7584 30.4763V24.5049C25.7584 24.1812 25.4961 23.919 25.1725 23.919C24.8489 23.919 24.5866 24.1812 24.5866 24.5049V29.8904H15.4134V20.7184H17.7699V24.9069C17.7699 25.1085 17.8736 25.2959 18.0444 25.4032C18.2152 25.5104 18.4291 25.5223 18.6108 25.4344L20.0001 24.7634L21.3894 25.4344C21.4701 25.4735 21.5573 25.4928 21.6442 25.4928C21.7527 25.4928 21.8609 25.4626 21.9557 25.4032C22.1266 25.296 22.2302 25.1086 22.2302 24.9069V20.7184H24.5867V21.8326C24.5866 22.1563 24.8489 22.4186 25.1725 22.4186V22.4186ZM21.0582 23.9731L20.2548 23.5851C20.1744 23.5462 20.0872 23.5267 20 23.5267C19.9128 23.5267 19.8256 23.5462 19.7451 23.5851L18.9418 23.9731V20.7184H21.0583V23.9731H21.0582Z" fill="black"/>
+          <path d="M21.39 26.9797H18.61C18.2864 26.9797 18.024 27.242 18.024 27.5656C18.024 27.8893 18.2864 28.1516 18.61 28.1516H21.39C21.7136 28.1516 21.9759 27.8893 21.9759 27.5656C21.9759 27.242 21.7136 26.9797 21.39 26.9797Z" fill="black"/>
+          </svg>  
+      </textarea>
+    </div>
+    <div class="col s2 center-align">
+      <div class="btnWrp">
+        <button id="tojson" class="btn waves-effect waves-light red lighten-3 button">svg to json</button>
+        <button id="tosvg" class="btn waves-effect waves-light red lighten-3 button marginBtn">json to svg</button>
+      </div>
+    </div>
+    <div class="col s5 center-align">
+      <div class="marginTop">JSON formated SVG</div>
+      <textarea class="textarea" id="jsonText"></textarea>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/ObjTree.js"></script>
+<script type="text/javascript">
+  $("#tojson").click(function () {
+    var xotree = new XML.ObjTree();
+    var json = eval("(" + $("#jsonText").val() + ")");
+    $("textarea#svgText").val(formatXml(xotree.writeXML(json)));
+  });
+  $("#tosvg").click(function () {
+    var xotree = new XML.ObjTree();
+    var dumper = new JKL.Dumper();
+    var tree = xotree.parseXML($("#svgText").val());
+    console.log(tree);
+    $("textarea#jsonText").val(dumper.dump(tree));
+  });
+</script>
+
+</html>
