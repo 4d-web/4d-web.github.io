@@ -1,0 +1,264 @@
+@import 'common/colors';
+
+/* ========= BUTTONS ========= */
+.btn {
+
+}
+
+.btn:hover {
+
+}
+
+.input:active {
+
+}
+
+/* ========= BUTTONS END ========= */
+
+/* ========= INPUTS ========= */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0px 1000px #ededed inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+.input {
+	&:hover {
+
+	}
+
+	&:focus {
+
+	}
+	&::placeholder {
+
+	}
+}
+/* ========= INPUTS END ========= */
+
+/* ========= CONTENT ========= */
+#root {
+	height: 100vh;
+	background: $pageBG;
+}
+
+main {
+	min-height: 400px;
+	padding-top: 140px;
+	background: $bg;
+}
+
+.content {
+	max-width: 1366px;
+	padding: 0 20px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/* ========= CONTENT END ========= */
+
+/* ========= MENU ========= */
+.section-menu,
+.nav-menu {
+}
+
+.nav-menu {
+	padding-left: 20px;
+	padding-right: 20px;
+	align-items: center;
+	display: flex;
+	> .nav-item {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+
+		> li {
+			min-width: 50px;
+
+			> a {
+				display: flex;
+				align-items: center;
+				padding: 10px;
+			}
+		}
+	}
+
+	.nav-item.left {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.nav-item.right {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+/* menu custom */
+.main_nav_menu .nav-menu,
+.main_nav_menu {
+	height: 140px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: $headerBG;
+}
+
+.main_nav_menu {
+	.nav-item.right {
+		> li {
+			position: relative;
+			> a {
+				font-size: 20px;
+				color: white;
+				font-weight: bold;
+				padding-left: 30px;
+				transition: .2s;
+
+				&:before {
+					content: '';
+					width: 4px;
+					height: 15px;
+					border-radius: 10px;
+					background: $gray;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 8px;
+					transition: .2s;
+				}
+				&:hover {
+					color: $accent;
+					transition: .2s;
+					&:before {
+						background: $accent;
+						transition: .2s;
+						height: 25px;
+					}
+				}
+			}
+		}
+	}
+
+	.title > a,
+	.title > a > span {
+		font-size: 72px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.title > a {
+		color: white;
+		> span {
+			color: $yellow2;
+		}
+	}
+}
+/* ========= MENU END ========= */
+
+/* ========= MAIN SECTION ========= */
+.main {
+	padding-top: 140px;
+	min-height: calc(100vh - 200px);
+}
+.site-logo {
+	color: white;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	& a {
+		color: inherit;
+		> span {
+			font-weight: inherit;
+			color: $yellow2;
+		}
+	}
+}
+.coming-soon {
+
+}
+
+.error_info {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	& .error_code {
+		text-transform: uppercase;
+	};
+	& .error_text {
+		text-transform: uppercase;
+	}
+}
+/* ========= END MAIN SECTION ========= */
+
+/* ========= HOME PAGE MAIN SECTION ========= */
+.index_main_section {
+	height: 100vh;
+	background-image: url(../images/img/index_main_bg.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&:before {
+		content: '';
+		width: 100%;
+		height: 100vh;
+		background: rgba(51, 51, 51, 0.6);
+		position: absolute;
+		z-index: 1;
+	}
+
+	> .content {
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
+
+	.index_main_item > .title > h1 {
+		color: white;
+		font-size: 72px;
+		margin: 0;
+		padding: 0;
+		line-height: normal;
+		position: relative;
+		z-index: 2;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+.footer {
+	width: 100%;
+	bottom: 0;
+	height: 200px;
+	background: $footerBG;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* ========= END HOME PAGE MAIN SECTION ========= */
+
+/* |||||||||| ABOUT ME PAGE |||||||||| */
+
+/* |||||||||| END ABOUT ME PAGE |||||||||| */
+
+/* MEDIA */
+html {
+	/*    min-width: 1024px;*/
+}
+
+@media screen and (max-width: 1024px) {}
