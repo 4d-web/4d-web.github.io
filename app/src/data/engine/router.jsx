@@ -1,7 +1,7 @@
 import React from 'react'
 import App from './../../App'
 import Home from '../../catalog/view/theme/default/template/common/home'
-// import Info from '../../catalog/view/theme/default/template/info/info'
+import Info from '../../catalog/view/theme/default/template/info/info'
 // import NotFound from '../../catalog/view/theme/default/template/errors/NotFound'
 
 export default [
@@ -12,11 +12,11 @@ export default [
                 component: Home,
                 path: "/",
                 exact: true
-            }
-            // {
-            //     component: Info,
-            //     path: "/info"
-            // },
+            },
+            {
+                component: Info,
+                path: "/info"
+            },
             // {
             //     component: NotFound
             // }
@@ -24,7 +24,12 @@ export default [
     }
 ]
 
-
+// export const renderRoutes = () => (
+//     <Router history={browserHistory}>
+//         <Route exact path="/" component={App} />
+//         <Route path="/login" component={LoginForm} />
+//     </Router>
+// );
 
 
 

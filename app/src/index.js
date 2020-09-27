@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Routes from './data/engine/router'
+import Routes from './data/engine/router.jsx'
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -24,7 +24,9 @@ import {createBrowserHistory} from "history"
 
 const history = createBrowserHistory();
 
-ReactDOM.render(<Router history={history}>
-    <div>{renderRoutes(Routes)}</div>
-</Router>, document.querySelector('#root'))
+ReactDOM.render(
+    <Router history={history}>
+        <div>{renderRoutes(Routes)}</div>
+    </Router>
+    , document.querySelector('#root'))
 

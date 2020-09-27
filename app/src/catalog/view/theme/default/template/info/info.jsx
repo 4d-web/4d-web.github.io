@@ -5,7 +5,7 @@ export default function Info () {
     return (
         <div>
             <h1>Info</h1>
-            <Link to="/">Home</Link>
+            <a href="/" >Home</a>
         </div>
     )
 }

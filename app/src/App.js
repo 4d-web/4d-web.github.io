@@ -31,8 +31,7 @@ const {renderRoutes} = require('react-router-config')
 function App ({route}) {
   return (
       <div>
-        ddd
-        {/*{renderRoutes(route.routers)}*/}
+        {renderRoutes(route.routers)}
       </div>
   )
 }
