@@ -1,11 +1,12 @@
 const React = require("react")
-const Link = require('react-router-config')
 
 export default function Info () {
     return (
-        <div>
-            <h1>Info</h1>
-            <a href="/" >Home</a>
+        <div className="info-page page">
+            <div className="coming-soon">
+                <h1>Coming soon</h1>
+                <p>Go back to the <a href="/">home</a> page.</p>
+            </div>
         </div>
     )
 }

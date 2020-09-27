@@ -1,0 +1,427 @@
+@import "common/colors";
+@import "common/reset";
+
+/* FONT ADD */
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Medium.eot');
+    src: local('Gotham Pro Medium'), local('GothamPro-Medium'),
+        url('../fonts/GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro-Medium.woff') format('woff'),
+        url('../fonts/GothamPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Bold.eot');
+    src: local('Gotham Pro Bold'), local('GothamPro-Bold'),
+        url('../fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro-Bold.woff') format('woff'),
+        url('../fonts/GothamPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Light.eot');
+    src: local('Gotham Pro Light'), local('GothamPro-Light'),
+        url('../fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro-Light.woff') format('woff'),
+        url('../fonts/GothamPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro-Black.eot');
+    src: local('Gotham Pro Black'), local('GothamPro-Black'),
+        url('../fonts/GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro-Black.woff') format('woff'),
+        url('../fonts/GothamPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro.eot');
+    src: local('Gotham Pro'), local('GothamPro'),
+        url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro.woff') format('woff'),
+        url('../fonts/GothamPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* FONT ADD */
+
+
+.mainStyle .page {
+    padding: 30px;
+}
+
+/* MAIN STYLES */
+p,
+a,
+b,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+select,
+input,
+textarea,
+button,
+label,
+div {
+    font-family: 'Gotham Pro', sans-serif;
+}
+
+.mainStyle b {
+    font-weight: 600;
+}
+
+.mainStyle {
+    color: #757575;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.mainStyle h1,
+.mainStyle h2,
+.mainStyle h3,
+.mainStyle h4,
+.mainStyle h5,
+.mainStyle h6,
+.mainStyle p,
+.mainStyle li,
+.mainStyle a,
+.mainStyle span,
+.mainStyle div {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.mainStyle h1,
+.mainStyle h2,
+.mainStyle li {
+    color: $mainTextColor;
+}
+.mainStyle h3,
+.mainStyle h4,
+.mainStyle h5,
+.mainStyle h6,
+.mainStyle span,
+.mainStyle p {
+    color: $mainTextColorSecond;
+}
+
+.mainStyle h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 15px 0 30px 0;
+    &:before {
+        content: "";
+        position: absolute;
+    }
+}
+
+.mainStyle h2,
+.mainStyle h2 a {
+    margin: .5em 0;
+    font-size: 42px;
+    line-height: 1.1em;
+    font-weight: 400;
+}
+
+.mainStyle h3 {
+    font-size: 36px;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+
+.mainStyle h4 {
+    margin: .5em 0;
+    font-size: 30px;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+
+.mainStyle p,
+.mainStyle li,
+.mainStyle span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.mainStyle p {
+  color: $mainTextColorSecond;
+  line-height: 25px;
+}
+
+.mainStyle ol {
+    counter-reset: item !important;
+    padding-left: 0;
+}
+
+.mainStyle ul li::after {
+    //content: url(images/check-square.png);
+    content: "";
+    width: 12px;
+    position: absolute;
+    height: 12px;
+    left: 0;
+    top: 0;
+    display: block;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.mainStyle ol li::before {
+    content: counter(item, decimal-leading-zero) " ";
+    counter-increment: item;
+    color: #757575;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 0;
+    background: none;
+    font-weight: 600;
+}
+
+.mainStyle .fl-box li::before {
+    left: 0;
+}
+
+.mainStyle .fl-box ol li {
+    padding-left: 30px;
+}
+
+.mainStyle .fl-box ol li, .mainStyle .fl-box ul li {
+  display: flex;
+}
+
+.mainStyle ul li,
+.mainStyle ol li {
+    position: relative;
+    line-height: 24px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.mainStyle ol li {
+  padding-left: 30px;
+}
+
+.mainStyle ol li span, .mainStyle ul li span {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.mainStyle ol li p, .mainStyle ul li p{
+  text-indent: 0;
+  margin-bottom: 0;
+}
+
+.mainStyle ul,
+.mainStyle ol {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.mainStyle .fl-box ul,
+.mainStyle .fl-box ol {
+   padding-left: 0;
+}
+
+.mainStyle ul li:not(:last-child),
+.mainStyle ol li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.mainStyle a {
+    color: $accent;
+    text-decoration: none;
+}
+
+.mainStyle a:active,
+.mainStyle a:hover {
+  text-decoration: underline;
+}
+
+.edit-link a:hover {
+  text-decoration: none;
+}
+
+.mainStyle figure {
+  text-align: center;
+}
+
+.mainStyle figcaption {
+  display: inline-block;
+}
+
+.mainStyle .figcaption {
+  width: 100%;
+}
+
+.mainStyle .figcaption, .mainStyle figcaption {
+  font-size: 12px;
+  padding: 0 20px;
+}
+
+.mainStyle .dfc-img {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+.mainStyle .dfc-img figcaption {
+  width: 100%;
+}
+
+.mainStyle .dfc-img p {
+  width: 438px;
+  display: flex;
+  height: 270px;
+  margin: 8px 8px;
+}
+
+.mainStyle .dfc-img a {
+    height: 100%;
+    width: 100%;
+}
+
+.mainStyle .dfc-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.b-figcaption-a {
+  position: relative;
+  display: inline-block;
+}
+
+.b-figcaption-a p {
+  margin: 0;
+}
+
+.mainStyle .b-figcaption-a figcaption {
+    text-indent: 0;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #000000a1;
+    color: #ffffff;
+}
+
+.mainStyle .b-figcaption-a p {
+  margin: 0;
+}
+
+.b-ptb {
+  padding: 30px 0;
+}
+
+.b-pt {
+  padding: 30px 0 0 0;
+}
+
+.b-pb {
+  padding: 0 0 30px 0;
+}
+
+.mainStyle .tar {text-align: right;}
+.mainStyle .tal {text-align: left;}
+.mainStyle .tac {text-align: center; text-indent: 0;}
+
+.mainStyle .fr {
+    text-indent: 0;
+    float: right;
+    margin: 10px 0 0 15px;
+}
+
+.mainStyle .fl {
+    text-indent: 0;
+    float: left;
+    margin: 6px 15px 6px 0;
+}
+
+.mainStyle .b-img {
+  text-indent: 0 !important;
+}
+
+.mainStyle .b-img img {
+  width: auto;
+  height: 180px;
+}
+
+.mainStyle .w100 {width: 100% !important;}
+
+.mainStyle li {
+  display: block;
+}
+
+.mainStyle .bold {
+    font-weight: bold;
+}
+
+.mainStyle .important {
+  text-indent: 0;
+  border-radius: 11px;
+  padding: 35px 35px 35px 90px;
+    border: 1px solid #d1eafe;
+  background: #f2f7f9;
+  position: relative;
+  display: block;
+}
+
+.mainStyle .fl-box .important {
+  display: flow-root;
+}
+
+.mainStyle .important::before {
+  position: absolute;
+  content: "";
+  top: 55px;
+  left: 0;
+  width: 90px;
+  height: 100%;
+  //background-image: url(/images/icons/information.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 35px;
+}
+
+@media (max-width: 991px) {
+  .mainStyle .fl, .mainStyle .fr  {
+    margin: 10px;
+  }
+
+  .mainStyle .fl, .mainStyle .fr {
+      float: none;
+  }
+
+  .mainStyle .b-img {
+    text-align: center;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+  }
+}
+
+/* MAIN STYLES END */

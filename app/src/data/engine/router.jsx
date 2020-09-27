@@ -1,8 +1,9 @@
-import React from 'react'
+// common React from 'react'
 import App from './../../App'
 import Home from '../../catalog/view/theme/default/template/common/home'
 import Info from '../../catalog/view/theme/default/template/info/info'
-// import NotFound from '../../catalog/view/theme/default/template/errors/NotFound'
+import DeveloperTools from '../../catalog/view/theme/default/template/info/home'
+import NotFound from '../../catalog/view/theme/default/template/errors/404'
 
 export default [
     {
@@ -17,9 +18,13 @@ export default [
                 component: Info,
                 path: "/info"
             },
-            // {
-            //     component: NotFound
-            // }
+            {
+                component: DeveloperTools,
+                path: "/developer-tools"
+            },
+            {
+                component: NotFound
+            }
         ]
     }
 ]
