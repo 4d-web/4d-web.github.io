@@ -3,6 +3,7 @@
 # testing
 /gitignore
 /node_modules
+/app/node_modules
 /.idea
 
 # misc

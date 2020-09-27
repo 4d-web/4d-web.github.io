@@ -1,4 +1,6 @@
 import React from "react";
+import page from '../../../../../../data/engine/pages'
+
 
 export default function Header () {
     return (
@@ -13,10 +15,10 @@ export default function Header () {
                                 </li>
                             </ul>
                             <ul className="nav-item right">
-                                <li><a href="/info">About me</a></li>
-                                <li><a href="/info">Apps</a></li>
-                                <li><a href="catalog/developer-tools">Developer Tools</a></li>
-                                <li><a href="/info">Css presets</a></li>
+                                <li><a href={page.Info.path}>About me</a></li>
+                                <li><a href={page.Info.path}>Apps</a></li>
+                                <li><a href={page.Tools.path}>Developer Tools</a></li>
+                                <li><a href={page.Info.path}>Css presets</a></li>
                             </ul>
                         </nav>
                     </div>

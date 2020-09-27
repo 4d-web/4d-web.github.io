@@ -1,49 +1,41 @@
 // common React from 'react'
 import App from './../../App'
+import Page from './pages'
 import Home from '../../catalog/view/theme/default/template/common/home'
 import Info from '../../catalog/view/theme/default/template/info/info'
-import DeveloperTools from '../../catalog/view/theme/default/template/info/home'
+import DeveloperTools from '../../catalog/view/theme/default/template/DeveloperTools/index'
 import NotFound from '../../catalog/view/theme/default/template/errors/404'
+
+let page = {
+    Home: {
+        component: Home,
+        path: Page.Home.path,
+        exact: true
+    },
+    Info: {
+        component: Info,
+        path: Page.Info.path
+    },
+    Tools: {
+        component: DeveloperTools,
+        path: Page.Tools.path
+    },
+    NotFound: {
+        component: NotFound
+    }
+}
 
 export default [
     {
         component: App,
         routers: [
-            {
-                component: Home,
-                path: "/",
-                exact: true
-            },
-            {
-                component: Info,
-                path: "/info"
-            },
-            {
-                component: DeveloperTools,
-                path: "/developer-tools"
-            },
-            {
-                component: NotFound
-            }
+            page.Home,
+            page.Tools,
+            page.Info,
+            page.NotFound
         ]
     }
 ]
-
-// export const renderRoutes = () => (
-//     <Router history={browserHistory}>
-//         <Route exact path="/" component={App} />
-//         <Route path="/login" component={LoginForm} />
-//     </Router>
-// );
-
-
-
-
-
-
-
-
-
 
 
 
