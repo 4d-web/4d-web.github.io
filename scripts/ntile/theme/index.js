@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.41
+// @version      1.42
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -11,7 +11,7 @@
 let log = (text) => console.log(text)
 
 let info = {
-    "version": 1.41
+    "version": 1.42
 },
 styleData = `
     .ace-kuroir {
