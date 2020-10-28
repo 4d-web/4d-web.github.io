@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.41
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -11,7 +11,7 @@
 let log = (text) => console.log(text)
 
 let info = {
-    "version": 1.4
+    "version": 1.41
 },
 styleData = `
     .ace-kuroir {
@@ -22,7 +22,7 @@ styleData = `
         color: #9573A6;
     }
     .ace-kuroir .ace_numeric {
-        color: #6090B4;
+        color: #d26915;
     }
     .ace-kuroir .ace_marker-layer .ace_selection {
         background: rgb(167 129 45 / 57%) !important;
