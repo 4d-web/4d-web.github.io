@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.31
+// @version      1.32
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -11,7 +11,7 @@
 let log = (text) => console.log(text)
 
 let info = {
-    "version": 1.31
+    "version": 1.32
 },
 styleData = `
     .ace-kuroir {
@@ -34,8 +34,11 @@ styleData = `
     #codeBlock {
         height: 770px !important;
     }
-    .ace_cursor {
-        color: white;
+    .ace-kuroir .ace_marker-layer .ace_bracket {
+        border: 1px solid rgba(255, 255, 255, .5);
+     }
+    .ace-kuroir .ace_cursor {
+         color: white;
     }
 `
 
