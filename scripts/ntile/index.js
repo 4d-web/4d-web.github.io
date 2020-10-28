@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -39,5 +39,4 @@
 
 `;
     document.body.appendChild(style);
-    // Your code here...
 })();
