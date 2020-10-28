@@ -7,11 +7,19 @@
 // @match        https://squares.in.ua/administration/siteTemplates
 // @grant        none
 // ==/UserScript==
+let log = (text) => console.log(text)
+
+let info = {
+    "version": 1.2
+}
+
+log("===== THEME DARK "+ info.version +"=====");
+
 
 (function() {
     let kuroir = document.getElementsByClassName("ace-kuroir");
-    console.log("===== THEME DARK 1.1 =====");
-    var style = document.createElement('style');
+    let style = document.createElement('style');
+
     style.innerHTML = `
 .ace-kuroir {
   background-color: #333 !important;
