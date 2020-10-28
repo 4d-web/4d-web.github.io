@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -10,7 +10,6 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
     let kuroir = document.getElementsByClassName("ace-kuroir");
     console.log("===== THEME DARK 1.1 =====");
     var style = document.createElement('style');
