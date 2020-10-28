@@ -1,11 +1,15 @@
-// @version     2.4
+// ==UserScript==
+// @name         ntile-theme
+// @version     3.9
 // @history     2.4 HTTPS support; add Tampermonkey metadata.
 // @history     2.3 Exclude chat.
+// ==/UserScript==
+
 
 (function() {
     'use strict';
     let kuroir = document.getElementsByClassName("ace-kuroir");
-    console.log("===== THEME DARK 1.0 =====");
+    console.log("===== THEME DARK 1.1 =====");
     var style = document.createElement('style');
     style.innerHTML = `
 .ace-kuroir {
