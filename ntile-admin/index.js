@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     let kuroir = document.getElementsByClassName("ace-kuroir");
-    console.log("===== THEME ON =====");
+    console.log("===== THEME ON 2 =====");
     var style = document.createElement('style');
     style.innerHTML = `
 .ace-kuroir {
