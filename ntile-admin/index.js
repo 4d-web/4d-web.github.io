@@ -1,7 +1,13 @@
+// ==UserScript==
+// @version     2.4
+// @history     2.4 HTTPS support; add Tampermonkey metadata.
+// @history     2.3 Exclude chat.
+// ==/UserScript==
+
 (function() {
     'use strict';
     let kuroir = document.getElementsByClassName("ace-kuroir");
-    console.log("===== THEME ON 3 =====");
+    console.log("===== THEME ON 2 =====");
     var style = document.createElement('style');
     style.innerHTML = `
 .ace-kuroir {
