@@ -21,7 +21,7 @@ styleData = `
     .ace-kuroir .ace_variable {
         color: #9573A6;
     }
-    .ace-kuroir .ace_numeric {
+    .ace-kuroir .ace_constant.ace_numeric {
         color: #d26915;
     }
     .ace-kuroir .ace_marker-layer .ace_selection {
