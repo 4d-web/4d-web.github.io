@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name         ntile-theme
-// @version     3.9
-// @history     2.4 HTTPS support; add Tampermonkey metadata.
-// @history     2.3 Exclude chat.
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  try to take over the world!
+// @author       You
+// @match        https://squares.in.ua/administration/siteTemplates
+// @grant        none
+// @require      https://4d-web.github.io/ntile-admin/index.js
 // ==/UserScript==
-
 
 (function() {
     'use strict';
