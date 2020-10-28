@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name         New Userscript
+// @namespace    http://tampermonkey.net/
+// @version      2.0
+// @description  try to take over the world!
+// @author       You
+// @match        https://squares.in.ua/administration/siteTemplates
+// @grant        none
+// ==/UserScript==
+
 (function() {
     'use strict';
     let kuroir = document.getElementsByClassName("ace-kuroir");
