@@ -42,7 +42,7 @@ styleData = `
     }
 `
 
-log("===== THEME DARK v."+ info.version +" =====")
+log("[THEME DARK v."+ info.version +"]")
 let style = document.createElement('style')
 style.innerHTML = styleData
 document.body.appendChild(style)
