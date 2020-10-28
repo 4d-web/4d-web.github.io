@@ -1,12 +1,6 @@
-// ==UserScript==
-// @name         New Userscript
-// @namespace    http://tampermonkey.net/
-// @version      2.0
-// @description  try to take over the world!
-// @author       You
-// @match        https://squares.in.ua/administration/siteTemplates
-// @grant        none
-// ==/UserScript==
+// @version     2.4
+// @history     2.4 HTTPS support; add Tampermonkey metadata.
+// @history     2.3 Exclude chat.
 
 (function() {
     'use strict';
