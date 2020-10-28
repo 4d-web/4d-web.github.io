@@ -6,7 +6,6 @@
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
 // @grant        none
-// @require      https://4d-web.github.io/ntile-admin/index.js
 // ==/UserScript==
 
 (function() {
