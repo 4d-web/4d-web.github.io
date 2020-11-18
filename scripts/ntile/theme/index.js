@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.44
+// @version      1.45
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -10,7 +10,7 @@
 let log = (text) => console.log(text)
 
 let info = {
-        "version": 1.44,
+        "version": 1.45,
         "info": "beta"
     },
     styleData = `
@@ -47,7 +47,7 @@ let style = document.createElement('style')
 style.innerHTML = styleData
 document.body.appendChild(style)
 
-function ready () {
+function keyEvents () {
     // Настройки
     let keys = [ /// Можно указать больше языков
         [0, ['-', '_']],
@@ -150,9 +150,15 @@ function ready () {
         return true;
     }
 }
-/* Конец кода сортировки */
 
-document.addEventListener("DOMContentLoaded", ready);
+function init () {
+    keyEvents()
+}
+
+init()
+
+
+/* Конец кода сортировки */
 
 
 // var cssId = 'myCss';  // you could encode the css path itself to generate id..
