@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ntile-theme
 // @namespace    http://tampermonkey.net/
-// @version      1.45
+// @version      1.451
 // @description  try to take over the world!
 // @author       You
 // @match        https://squares.in.ua/administration/siteTemplates
@@ -10,7 +10,7 @@
 let log = (text) => console.log(text)
 
 let info = {
-        "version": 1.45,
+        "version": 1.451,
         "info": "beta"
     },
     styleData = `
@@ -48,15 +48,17 @@ style.innerHTML = styleData
 document.body.appendChild(style)
 
 function keyEvents () {
+    function showSplitter(string) {
+        console.log('----------------------------------------- ' + (string ? string : ''))
+    }
     // Настройки
     let keys = [ /// Можно указать больше языков
         [0, ['-', '_']],
         [1, ['s', 'S']],
         [2, ['r', 'R']],
     ]
-    let firstElement 	= 'folder', /// Первый элемент folder или file
-        сombSet			= true,	/// Комбинации активны true/false
-        сombinationKey 	= 'Alt'; 	/// Пока доступна только клавиша для комбинаций 'Alt'
+    let combSet		    = true	/// Комбинации активны true/false
+    let combinationKey 	= 'Alt' /// Пока доступна только клавиша для комбинаций 'Alt'
 
     // Cообщения
     let textMessages = {
@@ -94,9 +96,8 @@ function keyEvents () {
         return true;
     }
 
-    // Есть папки?
     // Есть такая кнопка?
-    let keysСheck = (key) => {
+    let keysCheck = (key) => {
         if (keys[0][1].some(elem => elem === key)) {
             return findButton("FoldAll"), showKey(event.key)
         } else if (keys[1][1].some(elem => elem === key)) {
@@ -110,22 +111,22 @@ function keyEvents () {
 
     // Кнопка нажата?
     document.addEventListener('keydown', (event) => {
-        let сombKey;
+        let combKey;
 
-        if (сombinationKey === 'Alt') {
-            сombKey = event.altKey;
+        if (combinationKey === 'Alt') {
+            combKey = event.altKey;
         } else {
-            сombKey = false;
+            combKey = false;
         }
 
-        if (сombSet === true & сombKey === true) {
-            if (event.key === сombinationKey) {
+        if (combSet === true & combKey === true) {
+            if (event.key === combinationKey) {
                 return; // Не реагировать на клавишу комбинаций
             } else {
-                return keysСheck(event.key);
+                return keysCheck(event.key);
             }
-        } else if (сombSet === false) {
-            return keysСheck(event.key);
+        } else if (combSet === false) {
+            return keysCheck(event.key);
         } else {
             return errorShow('404', event.key);
         }
@@ -135,8 +136,7 @@ function keyEvents () {
     let findButton = (text) => {
         let buttons = document.querySelectorAll('button');
         for (let i=0, l=buttons.length; i<l; i++) {
-            if (buttons[i].firstChild.nodeValue == text)
-                return hideCode(buttons[i])
+            if (buttons[i].firstChild.nodeValue == text) return hideCode(buttons[i])
         }
     }
 
