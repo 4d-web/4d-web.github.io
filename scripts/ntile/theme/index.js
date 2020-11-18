@@ -7,14 +7,13 @@
 // @match        https://squares.in.ua/administration/siteTemplates
 // @grant        none
 // ==/UserScript==
-function ready () {
-    let log = (text) => console.log(text)
+let log = (text) => console.log(text)
 
-    let info = {
-            "version": 1.43,
-            "info": "beta"
-        },
-        styleData = `
+let info = {
+        "version": 1.43,
+        "info": "beta"
+    },
+    styleData = `
         .ace-kuroir {
             background-color: #333 !important;
             color: white;
@@ -43,13 +42,12 @@ function ready () {
         }
     `
 
-    log("[THEME DARK v."+ info.version +"]")
-    let style = document.createElement('style')
-    style.innerHTML = styleData
-    document.body.appendChild(style)
+log("[THEME DARK v."+ info.version +"]")
+let style = document.createElement('style')
+style.innerHTML = styleData
+document.body.appendChild(style)
 
-
-
+function ready () {
     // Настройки
     let keys = [ /// Можно указать больше языков
         [0, ['-', '_']],
