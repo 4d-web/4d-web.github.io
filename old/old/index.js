@@ -1,4 +1,4 @@
-import React from 'react'
+mport React from 'react'
 import Routes from './data/engine/router.js'
 import ReactDOM from 'react-dom'
 import {Router} from 'react-router-dom'

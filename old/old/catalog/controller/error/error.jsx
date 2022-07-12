@@ -4,14 +4,14 @@
 /* <?php
 class ControllerErrorNotFound extends Controller {
     public function index() {
-    $this->load->language('error/not_found');
+    $this->load->locales('error/not_found');
 
-    $this->document->setTitle($this->language->get('heading_title'));
+    $this->document->setTitle($this->locales->get('heading_title'));
 
     $data['breadcrumbs'] = array();
 
     $data['breadcrumbs'][] = array(
-    'text' => $this->language->get('text_home'),
+    'text' => $this->locales->get('text_home'),
     'href' => $this->url->link('common/home')
     );
 
@@ -31,7 +31,7 @@ class ControllerErrorNotFound extends Controller {
 }
 
     $data['breadcrumbs'][] = array(
-    'text' => $this->language->get('heading_title'),
+    'text' => $this->locales->get('heading_title'),
     'href' => $this->url->link($route, $url, $this->request->server['HTTPS'])
     );
 }
@@ -43,7 +43,7 @@ class ControllerErrorNotFound extends Controller {
     $data['content_top'] = $this->load->controller('common/content_top');
     $data['content_bottom'] = $this->load->controller('common/content_bottom');
     $data['footer'] = $this->load->controller('common/footer');
-    $data['header'] = $this->load->controller('common/header');
+    $data['header.ts'] = $this->load->controller('common/header.ts');
 
     $this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
 

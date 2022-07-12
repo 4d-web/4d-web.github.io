@@ -1,0 +1,1121 @@
+$tableHeaderFontSize: 0.16rem;
+$tableItemsFontSize: 0.14rem;
+$textFontSize: 0.16rem;
+
+$dataColorAccent: #ffe629;
+$dataColorDarkMain: #111328;
+$datColorDark: #171717;
+$datColorLight: #7290b7;
+
+$blockBg: #181c3a;
+$bg: #ffffff;
+$modalBg: #272942;
+
+$textColor: $datColorLight;
+$errorColor: #fc0a55;
+
+$tableTopHeaderBg: $dataColorDarkMain;
+$tableTopHeaderColor: #7290b7;
+$tableHeaderColor: #526783;
+$tableItemBorderColor: #1e2b3c;
+
+$labelColor: #526783;
+$inputBorderColor: #506c91;
+$inputColor: $datColorLight;
+
+$tabButton: $dataColorDarkMain;
+$tabButtonHover: #181a2a;
+
+$btnPrimaryBorderColor: $dataColorAccent;
+$btnPrimaryBg: $dataColorAccent;
+$btnPrimaryColor: $datColorDark;
+$btnPrimaryBgHover: #ff9e21;
+$btnPrimaryColorHover: $datColorDark;
+$btnPrimaryBorderColorHover: #ff9e21;
+
+$btnSecondBorderColor: $dataColorAccent;
+$btnSecondBg: transparent;
+$btnSecondColor: $dataColorAccent;
+$btnSecondBgHover: $dataColorAccent;
+$btnSecondColorHover: $datColorDark;
+$btnSecondBorderColorHover: $dataColorAccent;
+
+$fastBetItemColor: $datColorLight;
+$fastBetItemBg: $dataColorDarkMain;
+$fastBetItemColorHover: $datColorDark;
+$fastBetItemBgHover: $dataColorAccent;
+
+$playersLost: $errorColor;
+$playersWin: #8fc92c;
+
+$circleColor: #526783;
+
+body {
+  background-color: $bg;
+  overflow: auto;
+}
+
+#GameWrapper {
+  color: $textColor;
+  padding: 0.2rem;
+  display: flex;
+
+  p,
+  li {
+    font-size: $textFontSize;
+    line-height: 0.25rem;
+  }
+}
+
+#reloadPage {
+  margin-top: 0.3rem;
+}
+
+.block {
+  border-radius: 0.2rem;
+  overflow: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .table-top-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: $tableTopHeaderColor;
+    background: $tableTopHeaderBg;
+    min-height: 0.48rem;
+    padding: 0.1rem 0.15rem;
+
+    &.table-items-left {
+      justify-content: flex-start;
+    }
+
+    .table-top-header-title {
+      text-align: center;
+      font-size: 0.18rem;
+    }
+  }
+
+  .table {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    border-collapse: collapse;
+
+    .thead {
+      .thead-table-tr {
+        position: sticky;
+        top: 0;
+
+        .thead-table-th {
+          background: $blockBg;
+          text-align: center;
+          font-weight: normal;
+          color: $tableHeaderColor;
+          padding: 0.15rem;
+          font-size: $tableHeaderFontSize;
+          text-transform: uppercase;
+
+          &:before {
+            content: '';
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            border-bottom: 1px solid $tableItemBorderColor;
+          }
+        }
+      }
+    }
+
+    .tbody {
+      transition: 0.3s;
+      overflow: auto;
+
+      .tbody-table-tr {
+        transition: 0.3s;
+        height: 0.5rem;
+        border-bottom: 1px solid $tableItemBorderColor;
+
+        .tbody-table-td {
+          transition: 0.3s;
+          text-align: center;
+          padding: 0 0.15rem;
+          font-size: $tableItemsFontSize;
+        }
+      }
+    }
+  }
+
+  &GameFirstColumn,
+  &#GameSecondColumn {
+    height: calc(100vh - 0.4rem);
+    max-height: 10.2rem;
+  }
+
+  &#GameFirstColumn {
+    width: 30%;
+    padding: 0 0.2rem 0 0;
+
+    #Players {
+      height: 100%;
+
+      #moreWrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 100%;
+
+        #btnShowMoreMembers,
+        #btnHideMembers {
+          visibility: hidden;
+          opacity: 0;
+
+          &.show {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .btn {
+          min-width: 50%;
+        }
+      }
+
+      #PlayersTop {
+        flex: 0 1 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: $tableTopHeaderBg;
+        padding: 0.15rem;
+
+        .PlayersTopText,
+        .PlayersTopValue {
+          text-align: center;
+          padding: 0 0.15rem;
+          font-size: 0.18rem;
+        }
+
+        .PlayersTopValue {
+          padding-top: 0.07rem;
+          font-weight: bold;
+        }
+      }
+
+      #PlayersMiddle {
+        height: calc(90% - 0.8rem);
+        overflow: auto;
+
+        .tbody .tbody-table-tr.WIN .tbody-table-td {
+          color: $playersWin;
+        }
+
+        .tbody .tbody-table-tr.LOST .tbody-table-td {
+          color: $playersLost;
+        }
+      }
+
+      #PlayersBottom {
+        height: 10%;
+      }
+    }
+  }
+
+  &#GameSecondColumn {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &#Players {
+    width: 100%;
+    height: 12rem;
+    background-color: $blockBg;
+  }
+
+  &#GameSpace {
+    width: 100%;
+    height: 5.6rem;
+    background-color: $blockBg;
+    margin-bottom: 0.2rem;
+    position: relative;
+
+    #GameSpacePanel {
+      z-index: 6;
+      position: absolute;
+      transition: 0.2s;
+      visibility: hidden;
+      opacity: 0;
+
+      &.active {
+        visibility: visible;
+        width: 100%;
+        height: 100%;
+        background: $blockBg;
+        opacity: 0.9;
+
+        .gameSpacePanelMessage {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      & .gameSpacePanelMessage {
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%, -50%);
+        color: inherit;
+        font-size: 0.26rem;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    #CrashGame {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border-radius: 1.375em;
+      overflow: hidden;
+    }
+
+    .crashGameSvg {
+      z-index: 2;
+
+      .crashGameGrid {
+        stroke: #fff;
+        stroke-opacity: 0.1;
+        stroke-dasharray: 2;
+      }
+
+      .CrashGameCircle {
+        text-anchor: middle;
+        fill: $circleColor;
+      }
+
+      #line {
+        stroke-width: 6;
+        stroke: url(#grad);
+        stroke-linejoin: round;
+        -webkit-filter: blur(0.1);
+        filter: blur(0.1);
+        fill: none;
+      }
+    }
+
+    .crashGameWrap,
+    .crashGameSvg {
+      width: 12rem;
+      height: 4.8rem;
+    }
+
+    .crashGameWrap {
+      z-index: 6;
+      position: absolute;
+
+      #crashGameСoef {
+        position: absolute;
+        right: 1.21rem;
+        bottom: 1.57rem;
+        font-size: 0.7rem;
+        color: #fff;
+        font-weight: bold;
+        visibility: hidden;
+        opacity: 0;
+
+        &.active {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      #crashGameTimer {
+        position: absolute;
+        right: -0.8rem;
+        bottom: -0.2rem;
+        width: 4.3rem;
+        height: 4.3rem;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        direction: ltr;
+        clip: rect(0em 3.19rem 3rem 0em);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0s;
+
+        #crashGameTimerCount {
+          font-size: 0.5rem;
+          color: #fff;
+          font-weight: bold;
+        }
+
+        &.active {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .crashGameTimerCircle {
+          position: absolute;
+          top: 2.05rem;
+          right: 50%;
+          height: 0.3rem;
+          -webkit-transform: rotate(-107deg);
+          transform: rotate(-107deg);
+          -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+          -webkit-animation: circle-bounce 0.9s 0.5s linear infinite;
+          animation: circle-bounce 0.9s 0.5s linear infinite;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            width: 0.3rem;
+            height: 0.3rem;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+        }
+
+        .crashGameTimerCounter {
+          margin: 0;
+          font-family: inherit;
+          font-size: 5.1875em;
+          font-weight: 700;
+          color: #fff;
+        }
+
+        #crashGameTimerSegments {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: rotate(180deg);
+          transition: transform 0.7s ease-in-out;
+
+          &.active {
+            .crashGameTimerSegment {
+              &:nth-child(n + 6) {
+                display: none;
+              }
+
+              &:nth-child(1)::before {
+                background-color: $dataColorAccent;
+              }
+            }
+          }
+
+          .crashGameTimerSegment {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            height: 2.15rem;
+            -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+            -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 3.7rem;
+              left: 0;
+              width: 0.1rem;
+              height: 0.3rem;
+              border-radius: 0.25rem;
+              background-color: #ffffff;
+            }
+
+            &:nth-child(1) {
+              transform: rotate(180deg);
+            }
+
+            &:nth-child(2) {
+              transform: rotate(144deg);
+            }
+
+            &:nth-child(3) {
+              transform: rotate(108deg);
+            }
+
+            &:nth-child(4) {
+              transform: rotate(72deg);
+            }
+
+            &:nth-child(5) {
+              transform: rotate(36deg);
+            }
+
+            &:nth-child(6) {
+              transform: rotate(-36deg);
+            }
+
+            &:nth-child(7) {
+              transform: rotate(-72deg);
+            }
+
+            &:nth-child(8) {
+              transform: rotate(-108deg);
+            }
+
+            &:nth-child(9) {
+              transform: rotate(-144deg);
+            }
+
+            &:nth-child(10) {
+              transform: rotate(0deg);
+            }
+          }
+        }
+      }
+
+      #airplane {
+        position: absolute;
+        bottom: 0.4rem;
+        width: 1.4rem;
+        height: 1rem;
+        z-index: 3;
+        background: url(img/aitplane/airplane.png) 0 0/4800% 100% no-repeat;
+        -webkit-animation: steps-sprite steps(47, start) 3s infinite;
+        animation: steps-sprite steps(47, start) 3s infinite;
+        pointer-events: none;
+        display: none;
+
+        &.center {
+          display: flex;
+          bottom: calc(50% - 0.8rem) !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+        }
+
+        &.crash {
+          width: 1.4rem;
+          height: 1.4rem;
+          background-image: url(img/aitplane/aitplane-crash.png);
+          background-size: 2500% 100%;
+          -webkit-animation: steps-crash-sprite steps(24, start) 2s 1 forwards;
+          animation: steps-crash-sprite steps(24, start) 2s 1 forwards;
+        }
+      }
+    }
+
+    #GameSpaceInfo {
+      display: flex;
+      position: relative;
+      z-index: 7;
+
+      .GameSpaceInfoItems {
+        display: flex;
+        font-size: 0.2rem;
+        padding: 0.15rem;
+
+        .btn {
+          min-width: 1.8rem;
+        }
+      }
+    }
+
+    #crashGameBg {
+      width: 11.15rem;
+      height: 3.7rem;
+      position: absolute;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50.9%;
+      z-index: 1;
+
+      &.running .crashGameBgRunning {
+        -webkit-animation-play-state: running;
+        animation-play-state: running;
+      }
+
+      .crashGameMountain {
+        position: absolute;
+        left: 50%;
+        width: 11.15rem;
+        height: 0.5rem;
+        bottom: 0.56rem;
+        background: url(img/bg/mountains/mountain-1.svg) repeat left center;
+        -webkit-transform: translateX(-50%);
+        background-size: 11.15rem 0.5rem;
+        transform: translateX(-50%);
+        transition: background-position 0.3s ease-in-out;
+        -webkit-animation: mountain-move 8s paused linear infinite;
+        animation: mountain-move 8s paused linear infinite;
+        pointer-events: none;
+      }
+
+      .crashGameMountain-2 {
+        background-image: url(img/bg/mountains/mountain-2.svg);
+        -webkit-animation-duration: 9s;
+        animation-duration: 9s;
+        height: 1rem;
+        background-size: 11.15rem 1rem;
+      }
+
+      .crashGameMountain-3 {
+        background-image: url(img/bg/mountains/mountain-3.svg);
+        -webkit-animation-duration: 18s;
+        animation-duration: 18s;
+        height: 1.4rem;
+        background-size: 11.15rem 1.4rem;
+      }
+
+      .crashGameMountain-4 {
+        background-image: url(img/bg/mountains/mountain-4.svg);
+        -webkit-animation-duration: 30s;
+        animation-duration: 30s;
+        height: 1.6rem;
+        background-size: 11.15rem 1.6rem;
+      }
+
+      .crashGameMountain-5 {
+        background-image: url(img/bg/mountains/mountain-5.svg);
+        -webkit-animation-duration: 50s;
+        animation-duration: 50s;
+        height: 2rem;
+        background-size: 11.15rem 2rem;
+      }
+    }
+  }
+
+  &#GameHistory,
+  &#GameBet {
+    height: calc(100% - 5.8rem);
+  }
+
+  &#GameHistory {
+    margin-right: 0.2rem;
+    flex-grow: 1;
+    background-color: $blockBg;
+
+    #GameHistoryMiddle {
+      overflow: auto;
+      height: calc(100% - 0.4rem);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #historyEmpty {
+      font-size: 0.2rem;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  &#GameBet {
+    width: 5.8rem;
+    background-color: $blockBg;
+
+    .GameBetPanel {
+      display: flex;
+      flex-direction: column;
+
+      #GameBetPanelFastBet {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        gap: 0.15rem;
+
+        .FastBetItem {
+          cursor: pointer;
+          color: $fastBetItemColor;
+          display: flex;
+          height: 0.45rem;
+          justify-content: center;
+          align-items: center;
+          padding: 0.15rem;
+          background: dimgrey;
+          transition: 0.3s;
+          font-size: 0.2rem;
+          border-radius: 0.2rem;
+          background: $fastBetItemBg;
+
+          &:hover {
+            color: $fastBetItemColorHover;
+            background: $fastBetItemBgHover;
+          }
+        }
+      }
+
+      .GameBetButton {
+        .btn-wrapper,
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.btn-wrapper {
+  padding: 0.15rem;
+  &.paddingOff {
+    padding: 0 !important;
+  }
+
+  &.bottomOff {
+    padding-bottom: 0;
+  }
+
+  &.topOff {
+    padding-top: 0;
+  }
+
+  &.leftOff {
+    padding-left: 0;
+  }
+
+  &.rightOff {
+    padding-right: 0;
+  }
+}
+
+.btn {
+  font-size: 0.17rem;
+  padding: 0 0.15rem;
+  height: 0.5rem;
+  width: fit-content;
+  min-width: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 0.2rem;
+
+  &.primary {
+    border: 0.02rem solid $btnPrimaryBorderColor;
+    background: $btnPrimaryBg;
+    color: $btnPrimaryColor;
+
+    &:active {
+      background: $btnPrimaryBgHover;
+      border-color: $btnPrimaryBgHover;
+    }
+
+    &:hover {
+      color: $btnPrimaryColorHover;
+      background: $btnPrimaryBgHover;
+      border-color: $btnPrimaryBorderColorHover;
+    }
+
+    &:disabled {
+      &:hover,
+      &:active,
+      & {
+        color: $btnPrimaryColor;
+        background: $btnPrimaryBg;
+        border-color: $btnPrimaryBorderColor;
+        cursor: default;
+      }
+
+      opacity: 0.3;
+    }
+  }
+
+  &.second {
+    border: 0.02rem solid $btnSecondBorderColor;
+    background: $btnSecondBg;
+    color: $btnSecondColor;
+
+    &:active {
+      border-color: $btnSecondBorderColorHover;
+      background: $btnSecondBgHover;
+      color: $btnSecondColorHover;
+    }
+
+    &:hover {
+      border-color: $btnSecondBorderColorHover;
+      background: $btnSecondBgHover;
+      color: $btnSecondColorHover;
+    }
+
+    &:disabled {
+      &:hover,
+      &:active,
+      & {
+        color: $btnSecondColor;
+        background: $btnSecondBg;
+        border-color: $btnSecondBorderColor;
+        cursor: default;
+      }
+
+      opacity: 0.3;
+    }
+  }
+}
+
+.panel-items {
+  padding-bottom: 0.15rem;
+
+  &.grid-item.col-2 {
+    display: grid;
+    gap: 0.15rem;
+    grid-template-columns: repeat(auto-fill, minmax(calc(50% - 0.3rem), 1fr));
+  }
+
+  &.paddingOff {
+    padding-bottom: 0;
+  }
+}
+
+.input-wrapper-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.14rem;
+  position: relative;
+
+  .input-error {
+    position: absolute;
+    color: $errorColor;
+    left: 0;
+    top: -42%;
+    background: $modalBg;
+    padding: 0.15rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    z-index: 100;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0.2rem;
+      bottom: -0.2rem;
+      border-width: 0.1rem;
+      border-style: solid;
+      border-color: $modalBg transparent transparent transparent;
+    }
+  }
+
+  .input-label {
+    color: $labelColor;
+    margin-bottom: 0.05rem;
+    margin-top: 0.1rem;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.input {
+  font-size: 0.18rem;
+  padding: 0 0.15rem;
+  height: 0.5rem;
+  transition: 0.3s;
+  background: transparent;
+  color: $inputColor;
+  border: 0.02rem solid $inputBorderColor;
+  border-radius: 0.2rem;
+  outline: none;
+
+  &:focus {
+    border-color: $dataColorAccent;
+  }
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+
+.modal {
+  z-index: 9999;
+  padding: 0.3rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    background: $modalBg;
+    position: relative;
+    font-size: 0.16rem;
+    min-width: 5rem;
+    min-height: 2rem;
+    max-height: 100%;
+    max-width: 8rem;
+    padding: 0.3rem;
+    overflow: auto;
+    border-radius: 0.2rem;
+
+    &.modal-center-all {
+      justify-content: center;
+      align-items: center;
+
+      .modal-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0.3rem;
+      width: 100%;
+
+      &.modal-title-off {
+        position: absolute;
+        right: 0.15rem;
+        top: 0.1rem;
+        padding-bottom: 0;
+
+        .modal-title {
+          display: none;
+        }
+      }
+
+      .modal-close {
+        font-size: 0.2rem;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-left: auto;
+
+        &:hover {
+          color: $dataColorAccent;
+        }
+      }
+
+      .modal-title {
+        font-size: 0.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.tabs {
+  height: 100%;
+  position: relative;
+  overflow: auto;
+
+  .tab {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 5;
+
+    .tab-button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0 0.15rem;
+      transition: 0.3s;
+      font-size: 0.16rem;
+      display: flex;
+      width: 100%;
+      height: 0.48rem;
+      align-items: center;
+      color: inherit;
+      background-color: $tabButton;
+      text-transform: uppercase;
+    }
+
+    .tab-button.active {
+      background-color: $blockBg;
+    }
+
+    .tab-button:hover {
+      background-color: $tabButtonHover;
+    }
+  }
+
+  & .tab-content {
+    display: none;
+    padding: 0.15rem;
+    border-top: none;
+    font-size: 0.2rem;
+  }
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 0.1rem; /* ширина для вертикального скролла */
+  height: 0.1rem; /* высота для горизонтального скролла */
+  background-color: #181a2a;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #506c91;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $dataColorAccent;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}
+
+// animations
+@-webkit-keyframes mountain-move {
+  to {
+    background-position-x: -11.15rem;
+  }
+}
+
+@keyframes mountain-move {
+  to {
+    background-position-x: -11.15rem;
+  }
+}
+
+@-webkit-keyframes shine-rotate {
+  to {
+    -webkit-transform: translate(-29%, 37%) rotate(360deg);
+    transform: translate(-29%, 37%) rotate(360deg);
+  }
+}
+
+@keyframes shine-rotate {
+  to {
+    -webkit-transform: translate(-29%, 37%) rotate(360deg);
+    transform: translate(-29%, 37%) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes steps-sprite {
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes steps-sprite {
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@-webkit-keyframes steps-crash-sprite {
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes steps-crash-sprite {
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@-webkit-keyframes circle-bounce {
+  70% {
+    -webkit-transform: rotate(-100deg);
+    transform: rotate(-100deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-111deg);
+    transform: rotate(-111deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(-102deg);
+    transform: rotate(-102deg);
+  }
+
+  0%,
+  40%,
+  100% {
+    -webkit-transform: rotate(-107deg);
+    transform: rotate(-107deg);
+  }
+}
+
+@keyframes circle-bounce {
+  70% {
+    -webkit-transform: rotate(-100deg);
+    transform: rotate(-100deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-111deg);
+    transform: rotate(-111deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(-102deg);
+    transform: rotate(-102deg);
+  }
+
+  0%,
+  40%,
+  100% {
+    -webkit-transform: rotate(-107deg);
+    transform: rotate(-107deg);
+  }
+}

@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Gotham Pro'), url('GothamProLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gotham Pro'), url('GothamProRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Gotham Pro'), url('GothamProMedium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Gotham Pro'), url('GothamProBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Gotham Pro'), url('GothamProBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Gotham Pro'), url('GothamProBlack.woff') format('woff');
+}
+
+
