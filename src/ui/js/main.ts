@@ -1,4 +1,4 @@
-import main from "../pages/main/main"
+// import main from "../pages/main/main"
 
 // const loadFile = (fileSrc, fileType) => {
 //     let fileRef;

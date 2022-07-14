@@ -1,6 +1,9 @@
 /* eslint-disable */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 isProductionBuild = false;
 
 module.exports = {
@@ -14,7 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.json'],
+    extensions: ['.js', '.ts', '.tsx', '.jsx', '.json'],
     alias: {
       ui: path.resolve(__dirname, '../ui'),
     },
@@ -25,19 +28,29 @@ module.exports = {
     open: false,
     compress: true,
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HTMLWebpackPlugin({
+      template: path.join(__dirname, 'index.html'),
+    }),
+  ],
   module: {
     rules: [
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre',
+      //   use: ['source-map-loader'],
+      // },
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: ['source-map-loader'],
-      },
-      {
-        use: 'ts-loader',
-        test: /\.tsx?$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
+        loader: 'babel-loader',
       },
+      // {
+      //   use: 'ts-loader',
+      //   test: /\.(ts)$/,
+      //   exclude: /node_modules/,
+      // },
       {
         test: /\.(png|jpg|svg)$/,
         loader: 'url-loader',

@@ -2,9 +2,18 @@ import i18next from './../../../language';
 import mainStyles from './../../css/mainStyles.module.scss';
 import styles from './../../css/mainStyles.module.scss';
 import Apps from './apps';
-import Header from './header';
+// import Header from '../header/header';
 import Menu from './leftMenu';
 // const t = i18next.t;
+// import React from 'react';
+//
+// export const Main = () => {
+//   return (
+//     <div>
+//       <div>test</div>
+//     </div>
+//   );
+// };
 
 export default class main {
   show: (callback?: () => void) => void;
@@ -12,6 +21,7 @@ export default class main {
   styles = styles;
 
   constructor() {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const _this = this;
     this.show = () => {
       document.getElementById('content-data').innerHTML = '' + '<div></div>';
