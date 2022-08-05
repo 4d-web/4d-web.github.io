@@ -5,7 +5,7 @@ import crashAviator from './../../../apps/crashAviator/game';
 
 export default class Apps {
   show: () => void;
-  styles = styles;
+  // styles = styles;
   constructor() {
     this.show = () => {
       crashAviator();

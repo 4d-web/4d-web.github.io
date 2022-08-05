@@ -19,7 +19,7 @@ export default class Menu {
         'afterbegin',
         `
              <div class="${styles.content}">
-               <h2>І тут такий вжук, і мова помінялася.</h2>
+               <h2>І тут такий вжук, і мова змінилася.</h2>
                <br>
                <br>
                <div>${t('developer_tools')}</div>

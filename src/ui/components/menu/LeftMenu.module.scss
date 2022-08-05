@@ -1,0 +1,15 @@
+@import './../../css/common/colors.module';
+
+.content {
+  color: $leftMenuColor;
+  inputbtn: string;
+  inputbtn: string;
+}
+
+button.inputBtn {
+  background: fuchsia;
+  border: 1px solid red;
+  &.active {
+    background: blue;
+  }
+}

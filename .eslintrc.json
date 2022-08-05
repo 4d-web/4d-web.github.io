@@ -25,6 +25,7 @@
     "max-len": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-ts-types": "off",
+    "operator-linebreak": ["error", "before"],
     "comma-dangle": [ "error", {
       "arrays": "always-multiline",
       "exports": "always-multiline",

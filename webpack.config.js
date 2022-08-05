@@ -2,7 +2,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+// const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 isProductionBuild = false;
 
@@ -10,7 +10,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src'),
 
   devtool: 'source-map', // карта файлов для перехода на оригинал
-  // mode: "development", // оригинальный код
+  // mode: 'development', // оригинальный код
 
   output: {
     filename: 'main.js',
@@ -30,9 +30,9 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new HTMLWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
-    }),
+    // new HTMLWebpackPlugin({
+    //   template: path.join(__dirname, 'index.html'),
+    // }),
   ],
   module: {
     rules: [

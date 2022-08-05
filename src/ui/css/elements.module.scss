@@ -1,19 +1,42 @@
-/* ========= COLORS ========= */
-$white: #fff;
-$yellow2: #ffc000;
-$yellow: #ffd700;
-$gray: #5c5c5c;
-$bg: #1e1e1e;
-/* ========= END COLORS ========= */
+@import 'common/colors.module';
 
 /* ========= BUTTONS ========= */
+button,
 .btn {
+  border: 1px solid $gray;
+  background: $gray;
+  min-height: 30px;
+  min-width: 100px;
+  &.active {
+    background: #ffd700;
+  }
+  &:active {
+    background: #ffd700;
+  }
+  &:hover {
+    background: $accent;
+  }
 }
 
-.btn:hover {
+.input {
+  border: 1px solid $gray;
+  background: $gray;
+  min-height: 30px;
+  min-width: 100px;
+  &:focus {
+    border-color: #ffd700;
+  }
+  &:active {
+    border-color: #ffd700;
+  }
+  &:hover {
+    border-color: $accent;
+  }
 }
 
-.input:active {
+.inputBtn {
+  border: 1px solid yellow;
+  background: rebeccapurple;
 }
 
 /* ========= BUTTONS END ========= */
@@ -46,13 +69,13 @@ select:-webkit-autofill:focus {
 /* ========= CONTENT ========= */
 body {
   height: 100vh;
-  background: $bg;
+  background: $bodyBg;
 }
 
 main {
   min-height: 400px;
   padding-top: 140px;
-  background: $bg;
+  background: $bodyBg;
 }
 
 .content {
@@ -101,77 +124,10 @@ main {
   }
 }
 
-/* menu custom */
-.main_nav_menu .nav-menu,
-.main_nav_menu {
-  height: 140px;
-  background: rgba(255, 255, 255, 0);
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: $bg;
-}
-
-.main_nav_menu {
-  .nav-item.right {
-    > li {
-      position: relative;
-
-      > a {
-        font-size: 20px;
-        color: $white;
-        font-weight: bold;
-        padding-left: 30px;
-        transition: 0.2s;
-
-        &:before {
-          content: '';
-          width: 4px;
-          height: 15px;
-          border-radius: 10px;
-          background: $gray;
-          position: absolute;
-          top: 13px;
-          left: 8px;
-          transition: 0.2s;
-        }
-
-        &:hover {
-          color: $yellow;
-          transition: 0.2s;
-
-          &:before {
-            background: $yellow;
-            transition: 0.2s;
-            height: 25px;
-            top: 7px;
-          }
-        }
-      }
-    }
-  }
-
-  .title > a,
-  .title > a > span {
-    font-size: 72px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .title > a {
-    color: $white;
-    > span {
-      color: $yellow2;
-    }
-  }
-}
-/* ========= MENU END ========= */
-
 /* ========= HOME PAGE MAIN SECTION ========= */
 .index_main_section {
   height: 720px;
-  background-image: url(../images/img/index_main_bg.jpg);
+  background-image: url(../images/main/index_main_bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -193,7 +149,7 @@ main {
   }
 
   .index_main_item > .title > h1 {
-    color: $white;
+    color: $dataColorLight;
     font-size: 72px;
     margin: 0;
     padding: 0;

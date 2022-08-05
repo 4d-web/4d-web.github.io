@@ -1,4 +1,4 @@
-// import main from "../pages/main/main"
+// import mainContainer from "../components/mainContainer/mainContainer"
 
 // const loadFile = (fileSrc, fileType) => {
 //     let fileRef;
@@ -19,7 +19,7 @@
 // }
 
 // var STORE = STORE || {}
-// let showPageMain = new main(STORE);
+// let showPageMain = new mainContainer(STORE);
 // console.log("STORE")
 
 // var STORE = STORE || {

@@ -3,6 +3,7 @@
 interface CssExports {
   'content': string;
   'header-box': string;
+  'hidden': string;
   'index_main_item': string;
   'index_main_section': string;
   'left': string;

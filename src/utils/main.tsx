@@ -1,3 +1,1 @@
-export const cn = (e: string[]) => {
-  return e.join(' ');
-};
+export const cn = (e: (string | CSSStyleSheet)[]) => e.join(' ').replace(/\s+/g, ' ').trim();

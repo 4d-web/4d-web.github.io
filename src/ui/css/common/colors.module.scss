@@ -1,0 +1,29 @@
+/* ========= MAIN COLORS ========= */
+$dataColorDark: #1e1e1e;
+$dataColorLight: #fff;
+$dataColorDarkMain: darken(#ffc000, 20%);
+$dataColorLightMain: #ffc000;
+$dataColorAccent: #ffc000;
+/* ========= END MEIN COLORS ========= */
+
+/* ========= COLORS ========= */
+$bodyBg: $dataColorDark;
+$textColor: $dataColorLight;
+$accent: $dataColorAccent;
+
+$yellow2: #ffc000;
+$yellow: #ffd700;
+$gray: #5c5c5c;
+
+$textColor: $dataColorLight;
+$leftMenuColor: $dataColorLight;
+$leftMenuBg: $dataColorLight;
+$accent: $dataColorAccent;
+
+/* BUTTONS */
+$btnBg: $dataColorLightMain;
+$btnBgHover: lighten($dataColorLightMain, 20%);
+$btnColor: $dataColorDark;
+/* END BUTTONS */
+
+/* ========= END COLORS ========= */

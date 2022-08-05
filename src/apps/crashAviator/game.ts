@@ -7,7 +7,7 @@ import {
   IArgAndNumberMap,
   ICrashAviatorBet,
   ICrashAviatorData,
-} from '../../interfacesAndEnums/interfaces';
+} from '../../interfacesAndEnums/apps';
 import i18next from './../../language';
 
 const t = i18next.t;

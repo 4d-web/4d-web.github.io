@@ -4,7 +4,6 @@
 }
 
 .nav-menu {
-  border: 1px solid red;
   padding-left: 20px;
   padding-right: 20px;
   align-items: center;
@@ -138,4 +137,8 @@
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
 }
