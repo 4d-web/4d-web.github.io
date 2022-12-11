@@ -1,16 +1,29 @@
 import i18next from './../../../language';
 import mainStyles from './../../css/mainStyles.module.scss';
 import styles from './../../css/mainStyles.module.scss';
-import React from 'react';
-import { IElementConfig } from '../../../interfacesAndEnums/interfaces';
+import React, { useContext } from 'react';
+import { IElementConfig, ISettingsApp } from '../../../interfacesAndEnums/interfaces';
 import LeftMenu from '../menu/LeftMenu';
 import Portfolio from '../portfolio/Portfolio';
+import AboutMe from '../aboutMe/AboutMe';
+import Button from '../button/Button';
+import Context from '../../../Context';
 
 export default function Container(props: IElementConfig): React.component {
+  const { settings, setSettings } = useContext(Context);
+  const newContext: ISettingsApp = {
+    isShowHeader: true,
+  };
+
   return (
     <>
-      <LeftMenu />
-      <div>Content</div>
+      <AboutMe />
+      <Button
+        text={'Show header'}
+        onClick={() => {
+          setSettings(newContext);
+        }}
+      />
       <Portfolio />
     </>
   );

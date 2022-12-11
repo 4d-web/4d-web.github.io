@@ -1,3 +1,5 @@
+@import '../../css/common/colors.module';
+
 /* ========= Header ========= */
 #header-box {
   color: blue;
@@ -93,11 +95,11 @@
 }
 
 .main_nav_menu .title > a {
-  color: #fff;
+  color: $dataColorLight;
 }
 
 .main_nav_menu .title > a > span {
-  color: #ffc000;
+  color: $dataColorAccent;
 }
 
 /* ========= MENU END ========= */

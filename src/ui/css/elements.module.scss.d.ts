@@ -13,6 +13,7 @@ interface CssExports {
   'nav-menu': string;
   'right': string;
   'title': string;
+  'veryBig': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

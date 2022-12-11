@@ -28,7 +28,9 @@ export default function Button(props: IButton): React.Component {
     : window.location.origin + isAnchor + props?.href;
 
   const btnClick = (item: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
-    if ((props.href && props?.target === ETargetLink.SELF) || props?.target === undefined) {
+    // debugger;
+    // :TODO Не зрозуміло навіщо тут така логіка спростити, або покращити
+    if ((props.href && props?.target === ETargetLink.SELF) || props?.target !== undefined) {
       item.preventDefault();
       window.open(link, ETargetLink.SELF);
     }
