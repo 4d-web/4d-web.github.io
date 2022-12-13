@@ -15,7 +15,7 @@ export default function Header(props: IElementConfig) {
             <div className={styles.content}>
               <nav className={styles['nav-menu']}>
                 <ul className={cn([styles.left, styles['nav-item']])}>
-                  <li>
+                  <li className={cn(styles.logo)}>
                     <h2 className={styles.title}>
                       <a href="/">
                         <span>4d</span>-web_{' '}

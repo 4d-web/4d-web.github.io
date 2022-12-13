@@ -1,3 +1,16 @@
-.content {
-  background: red;
+@import '../../css/common/colors.module';
+
+.title {
+  span {
+    color: $accent;
+  }
+  max-width: 900px;
+}
+
+
+// mobile
+@media (max-width: 768px) {
+  .title {
+    max-width: 200px;
+  }
 }

@@ -2,6 +2,7 @@
 $dataColorDark: #1e1e1e;
 $dataColorLight: #fff;
 $dataColorDarkMain: darken(#ffc000, 20%);
+$dataColorDarkSecond: #FFD2D2;
 $dataColorLightMain: #ffc000;
 $dataColorAccent: #ffc000;
 /* ========= END MEIN COLORS ========= */
@@ -10,6 +11,7 @@ $dataColorAccent: #ffc000;
 $bodyBg: $dataColorDark;
 $textColor: $dataColorLight;
 $accent: $dataColorAccent;
+$darkSecond: $dataColorDarkSecond;
 
 $yellow2: #ffc000;
 $yellow: #ffd700;

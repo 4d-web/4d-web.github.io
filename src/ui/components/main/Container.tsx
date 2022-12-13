@@ -1,9 +1,7 @@
 import i18next from './../../../language';
-import mainStyles from './../../css/mainStyles.module.scss';
-import styles from './../../css/mainStyles.module.scss';
+import styles from './../../css/elements.module.scss';
 import React, { useContext } from 'react';
 import { IElementConfig, ISettingsApp } from '../../../interfacesAndEnums/interfaces';
-import LeftMenu from '../menu/LeftMenu';
 import Portfolio from '../portfolio/Portfolio';
 import AboutMe from '../aboutMe/AboutMe';
 import Button from '../button/Button';
@@ -16,8 +14,9 @@ export default function Container(props: IElementConfig): React.component {
   };
 
   return (
-    <>
+    <div className={styles.content}>
       <AboutMe />
+      {/*
       <Button
         text={'Show header'}
         onClick={() => {
@@ -25,7 +24,8 @@ export default function Container(props: IElementConfig): React.component {
         }}
       />
       <Portfolio />
-    </>
+       */}
+    </div>
   );
 }
 

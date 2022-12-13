@@ -7,6 +7,7 @@ interface CssExports {
   'index_main_item': string;
   'index_main_section': string;
   'left': string;
+  'logo': string;
   'main_nav_menu': string;
   'nav-item': string;
   'nav-menu': string;
