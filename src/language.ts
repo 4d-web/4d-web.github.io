@@ -2,8 +2,10 @@ import i18next from 'i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-import ua from './ui/locales/ua/translation.json';
 import en from './ui/locales/en/translation.json';
+import ua from './ui/locales/ua/translation.json';
+import { getCookie, setCookie } from './utils/main';
+import { ELangValue } from './interfacesAndEnums/enums';
 
 i18next
   .use(Backend)
@@ -11,7 +13,7 @@ i18next
   .use(initReactI18next)
   .init({
     debug: true,
-    supportedLngs: ['ua', 'en', 'ru'],
+    supportedLngs: ['en', 'ua'],
     fallbackLng: 'en',
     backend: {
       loadPath: '/src/ui/locales/{{lng}}/translation.json',
@@ -21,12 +23,21 @@ i18next
       caches: ['cookie'],
     },
     resources: {
-      ua,
       en,
+      ua,
     },
   });
 
 export default i18next;
+// setCookie('firstLoad', true);
+// let firstLoad = true;
+console.log(!getCookie('firstLoad'));
+if (!getCookie('firstLoad')) {
+  i18next.changeLanguage(ELangValue.EN);
+  setCookie('i18next', ELangValue.EN);
+  setCookie('firstLoad', true);
+  console.log(getCookie('firstLoad'));
+}
 
 // export default data.then((value) => {
 //   // console.log(i18n.t(key ? key : 'about_me'));

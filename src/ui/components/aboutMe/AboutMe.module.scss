@@ -1,12 +1,11 @@
-@import '../../css/common/colors.module';
+@import 'src/ui/css/common/vars.module';
 
 .title {
   span {
-    color: $accent;
+    color: var(--dataColorAccent);
   }
   max-width: 900px;
 }
-
 
 // mobile
 @media (max-width: 768px) {

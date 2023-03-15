@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './language';
 import Context from './Context';
 import Header from './ui/components/header/Header';
@@ -11,6 +11,18 @@ import { ISettingsApp } from './interfacesAndEnums/interfaces';
 export default function App() {
   const settingsState: ISettingsApp = { isShowHeader: true, theme: 'DARK' };
   const [settings, setSettings] = React.useState({ settingsState });
+
+  useEffect(() => {
+    const style = document.createElement('style');
+
+    style.textContent = `
+      :root {
+        
+      }
+    `;
+
+    document.head.appendChild(style);
+  }, []);
 
   const showHideElement = (element: string, value: boolean) => {
     setSettings({ [element]: value });
@@ -25,7 +37,7 @@ export default function App() {
           {/*  text={!settings.isShowHeader ? 'HIDDEN' : 'SHOW'}*/}
           {/* />*/}
           <Header isShow={!settings?.isShowHeader} />
-          <Container isShow={true} />
+          <Container />
           <Footer isShow={!settings?.isShowFooter} />
         </MainBox>
       </Context.Provider>

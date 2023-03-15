@@ -1,14 +1,19 @@
-# Налаштування проекту 
+# Settings project
 _________________
-[Форматування файлу](https://www.markdownguide.org/basic-syntax)
+[Format file](https://www.markdownguide.org/basic-syntax)
+_________________
 
-## Інші налаштування
-_________________
+## Init project
+
+```
+npm init
+yarn start
+```
+
 ### ESLINT
 > Увага!
-
 Створення файлу налаштування та додавання файлу prettier:
-- `npx eslint --init` 
+- `npx eslint --init`
 - `yarn add -D eslint-plugin-prettier`
 - `yarn add -D eslint-config-prettier`
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import styles from '../../css/elements.module.scss';
+import styles from './Footer.module.scss';
 import { cn } from '../../../utils/main';
 interface FooterParams {
   isShow?: boolean;
@@ -12,7 +12,7 @@ export default function Footer(props: FooterParams) {
   return (
     <>
       {props.isShow ? (
-        <footer className={styles.content}>
+        <footer className={styles.footer}>
           <section>
             <div className="content">Footer</div>
           </section>

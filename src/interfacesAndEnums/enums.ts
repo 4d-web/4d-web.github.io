@@ -12,4 +12,15 @@ export enum EButtonType {
 export enum ERel {
   NOFOLLOW = 'nofollow',
 }
+
+export enum ELang {
+  UA = 'UA',
+  EN = 'EN',
+}
+
+export enum ELangValue {
+  UA = 'ua',
+  EN = 'en',
+}
+
 // end global elements

@@ -1,21 +1,23 @@
-import i18next from './../../../language';
-import styles from './../../css/elements.module.scss';
-import React, { useContext } from 'react';
-import { IElementConfig, ISettingsApp } from '../../../interfacesAndEnums/interfaces';
-import Portfolio from '../portfolio/Portfolio';
+// import i18next from './../../../language';
+import styles from './Container.module.scss';
+import React from 'react';
+// import { IElementConfig, ISettingsApp } from '../../../interfacesAndEnums/interfaces';
+// import Portfolio from '../portfolio/Portfolio';
 import AboutMe from '../aboutMe/AboutMe';
-import Button from '../button/Button';
-import Context from '../../../Context';
+// import Button from '../button/Button';
+// import Context from '../../../Context';
+// import InlineSVG from '../../images/main/leftImage.svg';
 
-export default function Container(props: IElementConfig): React.component {
-  const { settings, setSettings } = useContext(Context);
-  const newContext: ISettingsApp = {
-    isShowHeader: true,
-  };
+export default function Container(): React.component {
+  // const { settings, setSettings } = useContext(Context);
+  // const newContext: ISettingsApp = {
+  //   isShowHeader: true,
+  // };
 
   return (
-    <div className={styles.content}>
+    <div className={styles.container}>
       <AboutMe />
+      {/* <InlineSVG />*/}
       {/*
       <Button
         text={'Show header'}
@@ -29,6 +31,19 @@ export default function Container(props: IElementConfig): React.component {
   );
 }
 
+// export default class Container extends React.Component {
+//   render() {
+//     return (
+//       <div className={styles.container}>
+//         <LeftMenu />
+//         <AboutMe />
+//         <InlineSVG />
+//       </div>
+//     );
+//   }
+// }
+
+// export default class Container {}
 // export default class Container {
 //   show: (callback?: () => void) => void;
 //   mainStyles = mainStyles;

@@ -28,6 +28,7 @@ interface CssExports {
   'input': string;
   'inputBtn': string;
   'left': string;
+  'leftImage': string;
   'liFlex': string;
   'liFlexTitle': string;
   'mainStyle': string;
@@ -40,7 +41,10 @@ interface CssExports {
   'tac': string;
   'tal': string;
   'tar': string;
+  'textToggle': string;
   'title': string;
+  'toggle': string;
+  'toggleItem': string;
   'ulText': string;
   'veryBig': string;
   'w100': string;

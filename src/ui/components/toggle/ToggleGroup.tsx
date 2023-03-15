@@ -2,34 +2,33 @@ import React, { useId } from 'react';
 import { useState } from 'react';
 import { cn } from '../../../utils/main';
 import styles from '../../css/elements.module.scss';
-
-export interface item {
-  value: string;
-  title: string;
-  default?: boolean;
-}
+import { IToggleItem } from '../../../interfacesAndEnums/interfaces';
 
 export interface IToggleGroup {
-  items: item[];
-  styleBtn?: string;
-  styleBtnActive?: string;
+  items: IToggleItem[];
+  activeItem: string;
+  styleItem?: string;
+  styleItemActive?: string;
+  styleToggle?: string;
   onClick: (...item) => void;
 }
 
 export default function ToggleGroup(props: IToggleGroup): React.Component {
-  const [active, setActive] = useState(props.items[0].value);
+  const [active, setActive] = useState(props.activeItem);
+  // const [isFirstRender, setIsFirstRender] = useState(true);
   // const [removeDefoult, setremoveDefoult] = props.items[0]?.default;
+  // props.items.map((item) => (item.default ? setActive(item.value) : null));
 
   return (
-    <div>
+    <div className={cn([props?.styleToggle || styles.textToggle])}>
       {props.items.map((item, key) => (
         <button
           key={key}
           id={useId()}
           className={cn([
-            active === item.value ? props?.styleBtnActive || styles.active : undefined,
-            styles.btn,
-            props?.styleBtn,
+            active === item.value ? props?.styleItemActive || styles.active : undefined,
+            styles.toggleItem,
+            props?.styleItem,
           ])}
           onClick={() => {
             props.onClick(item);

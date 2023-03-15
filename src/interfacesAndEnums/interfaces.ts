@@ -8,4 +8,9 @@ export interface ISettingsApp {
   isShowFooter?: boolean;
   theme?: 'DARK' | 'LIGHT';
 }
+
+export interface IToggleItem {
+  value: string;
+  title: string;
+}
 // global end

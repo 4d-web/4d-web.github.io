@@ -1,4 +1,4 @@
-@import '../../css/common/colors.module';
+@import 'src/ui/css/common/vars.module';
 
 .PRIMARY {
   margin: 10px;
@@ -27,7 +27,7 @@
   min-height: fit-content;
   min-width: fit-content;
   padding: 0;
-  color: $accent;
+  color: var(--dataColorAccent);
   font-size: 18px;
   &:not(.disabled):hover,
   &:not(.disabled):active {
