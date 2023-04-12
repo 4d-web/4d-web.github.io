@@ -9,15 +9,5 @@ interface FooterParams {
 export default function Footer(props: FooterParams) {
   const { t } = useTranslation();
 
-  return (
-    <>
-      {props.isShow ? (
-        <footer className={styles.footer}>
-          <section>
-            <div className="content">Footer</div>
-          </section>
-        </footer>
-      ) : null}
-    </>
-  );
+  return <>{props.isShow ? <footer className={styles.footer}>Footer</footer> : null}</>;
 }
