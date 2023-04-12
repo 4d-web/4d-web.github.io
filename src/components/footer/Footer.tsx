@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Footer.module.scss';
-import { cn } from '../../../utils/main';
+import { cn } from '../../utils/main';
 interface FooterParams {
   isShow?: boolean;
 }
