@@ -1,7 +1,7 @@
 import React, { useId } from 'react';
-import { cn } from '../../../utils/main';
+import { cn } from '../../utils/main';
 import styles from './Button.module.scss';
-import { EButtonType, ERel, ETargetLink } from '../../../interfacesAndEnums/enums';
+import { EButtonType, ERel, ETargetLink } from '../../interfacesAndEnums/enums';
 
 interface IButton {
   styles?: CSSStyleSheet;
