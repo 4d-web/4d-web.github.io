@@ -2,8 +2,8 @@ import i18next from 'i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-import en from './ui/locales/en/translation.json';
-import ua from './ui/locales/ua/translation.json';
+import en from './assets/locales/en/translation.json';
+import ua from './assets/locales/ua/translation.json';
 import { getCookie, setCookie } from './utils/main';
 import { ELangValue } from './interfacesAndEnums/enums';
 
@@ -16,7 +16,7 @@ i18next
     supportedLngs: ['en', 'ua'],
     fallbackLng: 'en',
     backend: {
-      loadPath: '/src/ui/locales/{{lng}}/translation.json',
+      loadPath: '/src/assets/locales/{{lng}}/translation.json',
     },
     detection: {
       order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomein'],

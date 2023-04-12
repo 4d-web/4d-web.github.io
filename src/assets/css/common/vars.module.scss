@@ -1,0 +1,45 @@
+:root {
+  --dataColorLight: #fff;
+  --dataColorDark: #222d4a;
+  --dataColorLightMain: #d7d6ef;
+  --dataColorLightSecond: #e0e5f1;
+  --dataColorDarkMain: #312b72;
+  --dataColorDarkSecond: #ffd2d2;
+  --dataColorAccent: #807dcc;
+  --dataColorGray: #e0e5f1ff;
+
+  /* ========= ELSE COLORS ========= */
+  // else
+  --bodyBg: var(--dataColorLight);
+  --gray: var(--dataColorGray);
+  // text
+  --textColor: var(--dataColorDark);
+  --textColorHover: var(--dataColorAccent);
+  // buttons
+
+  /* ========= END ELSE COLORS ========= */
+}
+
+/* ========= FONT ========= */
+:root {
+  --fontMain: 'Montserrat';
+  --fontSizeText: 18px;
+  --fontSizeVeryBig: 72px;
+  --fontSizeH1: 36px;
+  --fontSizeH2: 42px;
+  --fontSizeH3: 36px;
+  --fontSizeH4: 28px;
+  --fontSizeH5: 24px;
+}
+/* ========= END FONT ========= */
+
+/* ========= VAR ========= */
+:root {
+  --headerWidth: 1366px;
+  --contentWidth: 1366px;
+  --footerWidth: 1366px;
+  --contentPadding: 0 60px;
+  --headerPadding: 0 60px;
+  --footerPadding: 0 60px;
+}
+/* ========= END VAR ========= */

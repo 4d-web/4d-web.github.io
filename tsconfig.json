@@ -3,7 +3,7 @@
     "module": "commonjs",
     "rootDir": "./src", // ресурси
     "outDir": "./build", // куди збирати
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    // "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "resolveJsonModule": true, // завантаження json (оскільки вони досить важкі їх блокують за замовчуваням)
     "target": "ES6",
     "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost", "ES2016.Array.Include"],
@@ -67,7 +67,7 @@
   "include": [
     "src",
     "stories",
-    "declaration.d.ts"
+    // "declaration.d.ts"
   ],
   "exclude": [
     "node_modules"

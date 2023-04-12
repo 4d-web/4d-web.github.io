@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import './language';
 import Context from './Context';
-import Header from './ui/components/header/Header';
-import Container from './ui/components/main/Container';
+import Header from './components/header/Header';
+import Container from './components/main/Container';
 import MainBox from './MainBox';
-import Footer from './ui/components/footer/Footer';
-import Button from './ui/components/button/Button';
+import Footer from './components/footer/Footer';
+import Button from './components/button/Button';
 import { ISettingsApp } from './interfacesAndEnums/interfaces';
 
 export default function App() {

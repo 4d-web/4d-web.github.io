@@ -1,0 +1,14 @@
+@import 'src/assets/css/common/vars.module';
+
+.content {
+  inputbtn: string;
+  inputbtn: string;
+}
+
+button.inputBtn {
+  background: fuchsia;
+  border: 1px solid red;
+  &.active {
+    background: blue;
+  }
+}
