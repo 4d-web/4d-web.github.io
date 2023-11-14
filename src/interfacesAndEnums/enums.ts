@@ -23,4 +23,6 @@ export enum ELangValue {
   EN = 'en',
 }
 
+export enum EToggleType {}
+
 // end global elements

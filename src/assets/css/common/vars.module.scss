@@ -1,4 +1,5 @@
 :root {
+  // main
   --dataColorLight: #fff;
   --dataColorDark: #222d4a;
   --dataColorLightMain: #d7d6ef;
@@ -7,8 +8,6 @@
   --dataColorDarkSecond: #ffd2d2;
   --dataColorAccent: #807dcc;
   --dataColorGray: #e0e5f1ff;
-
-  /* ========= ELSE COLORS ========= */
   // else
   --bodyBg: var(--dataColorLight);
   --gray: var(--dataColorGray);
@@ -16,8 +15,6 @@
   --textColor: var(--dataColorDark);
   --textColorHover: var(--dataColorAccent);
   // buttons
-
-  /* ========= END ELSE COLORS ========= */
 }
 
 /* ========= FONT ========= */

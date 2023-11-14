@@ -3,19 +3,17 @@ import { useState } from 'react';
 import { cn } from '../../utils/main';
 import styles from '../../assets/css/elements.module.scss';
 import { IToggleItem } from '../../interfacesAndEnums/interfaces';
-import { EToggleType } from '../../interfacesAndEnums/enums';
 
-export interface IToggleGroup {
+export interface IRadio {
   items: IToggleItem[];
   activeItem: string;
   styleItem?: string;
   styleItemActive?: string;
   styleToggle?: string;
-  toggleType?: EToggleType;
   onClick: (...item) => void;
 }
 
-export default function ToggleGroup(props: IToggleGroup): React.Component {
+export default function ToggleGroup(props: IRadio): React.Component {
   const [active, setActive] = useState(props.activeItem);
 
   return (
