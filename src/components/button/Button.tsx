@@ -3,7 +3,6 @@ import { cn } from '../../utils/main';
 import styles from '../../assets/css/elements.module.scss';
 import сStyles from './Button.module.scss';
 import { ETargetLink } from '../../interfacesAndEnums/enums';
-import Icon from '../Icon/Icon';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../store';
 import { IButton } from '../../interfacesAndEnums/interfaces';
@@ -69,7 +68,7 @@ export default function Button(props: IButton): React.Component {
             btnClick(item);
           }}
         >
-          {icon ? <Icon name={icon} /> : null}
+          {/* {icon ? <Icon name={icon} /> : null} */}
           {props?.text}
         </button>
       )}
