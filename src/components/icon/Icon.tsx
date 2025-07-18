@@ -4,8 +4,19 @@ import * as BsIcons from 'react-icons/bs';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export default function Icon({ name, size = 24, ...props }) {
-  const lib = useSelector((state: { isons: { lib: string } }) => state.icons.lib);
+type IconLib = 'md' | 'fa' | 'bs';
+type IconName = string;
+
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  name: IconName;
+  lib?: IconLib | string;
+  size?: number;
+}
+
+// https://react-icons.github.io/react-icons/icons/bs/
+
+export default function Icon({ name, lib = undefined, size = 24, ...props }: IconProps) {
+  lib = lib || useSelector((state: { icons: { lib: string } }) => state.icons.lib);
 
   const libraries = {
     md: MdIcons,
@@ -14,8 +25,6 @@ export default function Icon({ name, size = 24, ...props }) {
   };
 
   const IconComponent = libraries[lib][name];
-
-  console.log(`Icon: ${name}, Library: ${lib}, Size: ${size}`, IconComponent);
 
   return IconComponent ? <IconComponent size={size} {...props} /> : null;
 }

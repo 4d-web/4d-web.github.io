@@ -1,19 +1,58 @@
-@import 'src/assets/css/common/vars.module';
+@use '../../assets/css/common/vars.module.scss';
 
 .PRIMARY {
-  margin: 10px;
-  background: $btnBg;
-  color: $btnColor;
+  // background: var(--btnPrimaryBg);
+  color: var(--btnPrimaryColor);
   font-size: 18px;
-  min-height: 50px;
-  min-width: 200px;
+  min-height: 60px;
+  padding: 10px 16px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  border-radius: 60px;
+  background: linear-gradient(126deg, var(--btnPrimaryBg) 50%, var(--btnPrimaryBgG) 100%);
+  border: none;
+  background-size: 200% auto;
+  transition: 0.3s;
+
   &:not(.disabled):hover,
   &:not(.disabled):active {
-    background: $btnBgHover;
+    color: var(--btnPrimaryColorHover);
+    background-position: 100%;
   }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.btn.minWidtn {
+  min-width: 300px;
+
+  @media (max-width: 768px) {
+    min-width: auto;
+  }
+}
+
+.SECONDARY {
+  background: var(--btnSecondaryBg);
+  color: var(--btnSecondaryColor);
+  font-size: 18px;
+  min-height: 60px;
+  padding: 10px 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  border: none;
+
+  &:not(.disabled):hover,
+  &:not(.disabled):active {
+    color: var(--btnSecondaryColorHover);
+    background: var(--btnSecondaryBgHover);
+  }
+
   &.disabled {
     cursor: default;
     opacity: 0.5;
@@ -21,7 +60,6 @@
 }
 
 .LINK {
-  margin: 10px;
   background: transparent;
   display: block;
   min-height: fit-content;
@@ -29,15 +67,15 @@
   padding: 0;
   color: var(--dataColorAccent);
   font-size: 18px;
+  border: none;
+
   &:not(.disabled):hover,
   &:not(.disabled):active {
     text-decoration: underline;
     background: transparent;
   }
+
   &.disabled {
     opacity: 0.5;
   }
-}
-
-input[type='text'] {
 }

@@ -1,5 +1,46 @@
-.footer {
-  width: var(--footerWidth);
+@use '../../assets/css/common/vars.module';
+
+/* ========= Footer ========= */
+.footerWrapper {
+  max-width: var(--footerWidth);
   padding: var(--footerPadding);
   margin: 0 auto;
+
+  .footerContent {
+    .footerText {
+    }
+
+    .footerItems {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 40px;
+
+      .footerRight {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .footerWrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footerWrapper {
+    .footerItems {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footerWrapper {
+    padding: var(--footerPaddingMobile);
+  }
 }

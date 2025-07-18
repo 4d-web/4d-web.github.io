@@ -2,18 +2,7 @@ import React, { useId } from 'react';
 import { useState } from 'react';
 import { cn } from '../../utils/main';
 import styles from '../../assets/css/elements.module.scss';
-import { IToggleItem } from '../../interfacesAndEnums/interfaces';
-import { EToggleType } from '../../interfacesAndEnums/enums';
-
-export interface IToggleGroup {
-  items: IToggleItem[];
-  activeItem: string;
-  styleItem?: string;
-  styleItemActive?: string;
-  styleToggle?: string;
-  toggleType?: EToggleType;
-  onClick: (...item) => void;
-}
+import { IToggleGroup } from '../../interfacesAndEnums/interfaces';
 
 export default function ToggleGroup(props: IToggleGroup): React.Component {
   const [active, setActive] = useState(props.activeItem);

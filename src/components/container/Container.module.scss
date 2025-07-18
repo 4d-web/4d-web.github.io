@@ -1,7 +1,14 @@
-@import 'src/assets/css/common/vars.module';
+@use '../../assets/css/common/vars.module';
 
-.container {
-  width: var(--contentWidth);
+#container {
+  max-width: var(--contentWidth);
   margin: 0 auto;
   padding: var(--headerPadding);
+}
+
+@media screen and (max-width: 1550px) {
+  #container {
+    width: 100%;
+    padding: var(--contentPaddingMobile);
+  }
 }

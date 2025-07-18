@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import styles from './Header.module.scss';
+import cStyles from './Header.module.scss';
 import { cn } from '../../utils/main';
 import { IElementConfig, IToggleItem } from '../../interfacesAndEnums/interfaces';
 import ToggleGroup from '../toggle/ToggleGroup';
-import { ELang, ELangValue } from '../../interfacesAndEnums/enums';
+import { ELang, ELangValue, ETheme } from '../../interfacesAndEnums/enums';
+import Logo from '../logo/Logo';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLanguage } from '../../store';
+import Anim from '../anim/Anim';
+import { EAnimaton } from '../../interfacesAndEnums/enums';
 
 export default function Header(props: IElementConfig) {
   const { i18n } = useTranslation();
-  const toggleItems: IToggleItem[] = [
+  const language = useSelector((state: { language: { value: string } }) => state.language.value);
+  // const theme = useSelector((state: { theme: { name: ETheme } }) => state.theme.name);
+  const dispatch = useDispatch();
+  const changeLanguage = (item: IToggleItem) => dispatch(setLanguage(item.value));
+  const { t } = useTranslation();
+
+  const langToggleItems: IToggleItem[] = [
     {
       title: ELang.EN,
       value: ELangValue.EN,
@@ -19,92 +30,56 @@ export default function Header(props: IElementConfig) {
     },
   ];
 
-  let activeItem: string;
-
-  toggleItems.find(
-    (item: IToggleItem) => (activeItem = i18n.language == item.value ? item.value : '')
-  );
-
-  const changeLanguage = (item: IToggleItem) => i18n.changeLanguage(item.value);
-
-  const [isThemeLight, setIsThemeLight] = useState(true);
-
-  const dark = {
-    '--dataColorLight': '#000',
-    '--dataColorDark': '#fff',
-    '--dataColorLightMain': '#d7d6ef',
-    '--dataColorLightSecond': '#e0e5f1',
-    '--dataColorDarkMain': '#312b72',
-    '--dataColorDarkSecond': '#ffd2d2',
-    '--dataColorAccent': '#807dcc',
-    '--dataColorGray': '#e0e5f1ff',
-  };
-
-  const light = {
-    '--dataColorLight': '#fff',
-    '--dataColorDark': '#222d4a',
-    '--dataColorLightMain': '#d7d6ef',
-    '--dataColorLightSecond': '#e0e5f1',
-    '--dataColorDarkMain': '#312b72',
-    '--dataColorDarkSecond': '#ffd2d2',
-    '--dataColorAccent': '#807dcc',
-    '--dataColorGray': '#e0e5f1ff',
-  };
-
-  const setVariables = (vars: { [key: string]: string }) => {
-    setIsThemeLight(!isThemeLight);
-    Object.entries(vars).forEach((v) => document.documentElement.style.setProperty(v[0], v[1]));
-  };
+  useEffect(() => {
+    if (i18n.language !== language) {
+      i18n.changeLanguage(language);
+    }
+  }, [language, i18n]);
 
   return (
     <>
       {props.isShow ? (
-        <header id={styles['header-box']}>
-          <section className={styles.main_nav_menu}>
-            <nav className={styles.navMenu}>
-              <div className={cn([styles.left, styles.navItem])}>
-                <div className={cn(styles.logo)}>
-                  <h2 className={styles.title}>
-                    <a href="/">
-                      <span>4d</span>-web_{' '}
-                    </a>
-                  </h2>
+        <Anim animation={EAnimaton.SLIDE_DOWN}>
+          <header id={cStyles.headerBox}>
+            <section className={cStyles.mainNavMenu}>
+              <nav className={cStyles.navMenu}>
+                <div className={cn([cStyles.left, cStyles.navItem])}>
+                  <Logo />
                 </div>
-              </div>
-              <div className={cn([styles.navItem, styles.right])}>
-                <ToggleGroup
-                  items={toggleItems}
-                  activeItem={activeItem}
-                  styleToggle={styles.langToggle}
-                  styleItem={styles.langToggleItem}
-                  styleItemActive={styles.active}
-                  onClick={changeLanguage}
-                />
-              </div>
-              <button
-                onClick={() => {
-                  setVariables(!isThemeLight ? light : dark);
-                }}
-              >
-                {isThemeLight ? 'DARK' : 'LIGHT'}
-              </button>
-              {/* <ul className={cn([styles.navItem, styles.right])}>*/}
-              {/*  <li>*/}
-              {/*    <a href="#">{t('about_me')}</a>*/}
-              {/*  </li>*/}
-              {/*  <li>*/}
-              {/*    <a href="#"> {t('apps')}</a>*/}
-              {/*  </li>*/}
-              {/*  <li>*/}
-              {/*    <a href="#">{t('developer_tools')}</a>*/}
-              {/*  </li>*/}
-              {/*  <li>*/}
-              {/*    <a href="#">{t('css_presets')}</a>*/}
-              {/*  </li>*/}
-              {/* </ul>*/}
-            </nav>
-          </section>
-        </header>
+
+                {/* <Button
+                text={theme}
+                onClick={() =>
+                  dispatch(setTheme(theme === ETheme.DARK ? ETheme.LIGHT : ETheme.DARK))
+                }
+                /> */}
+
+                <ul className={cn([cStyles.navItem, cStyles.right])}>
+                  <li>
+                    <a href="#">{t('home.menu.howIWork')}</a>
+                  </li>
+                  <li>
+                    <a href="#">{t('home.menu.contacts')}</a>
+                  </li>
+                  <li>
+                    <a href="#">{t('home.menu.portfolio')}</a>
+                  </li>
+                </ul>
+
+                <div className={cn([cStyles.navItem, cStyles.right, cStyles.navLang])}>
+                  <ToggleGroup
+                    items={langToggleItems}
+                    activeItem={language}
+                    styleToggle={cStyles.langToggle}
+                    styleItem={cStyles.langToggleItem}
+                    styleItemActive={cStyles.active}
+                    onClick={changeLanguage}
+                  />
+                </div>
+              </nav>
+            </section>
+          </header>
+        </Anim>
       ) : null}
     </>
   );

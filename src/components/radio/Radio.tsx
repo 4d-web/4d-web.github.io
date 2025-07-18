@@ -2,16 +2,7 @@ import React, { useId } from 'react';
 import { useState } from 'react';
 import { cn } from '../../utils/main';
 import styles from '../../assets/css/elements.module.scss';
-import { IToggleItem } from '../../interfacesAndEnums/interfaces';
-
-export interface IRadio {
-  items: IToggleItem[];
-  activeItem: string;
-  styleItem?: string;
-  styleItemActive?: string;
-  styleToggle?: string;
-  onClick: (...item) => void;
-}
+import { IRadio } from '../../interfacesAndEnums/interfaces';
 
 export default function ToggleGroup(props: IRadio): React.Component {
   const [active, setActive] = useState(props.activeItem);

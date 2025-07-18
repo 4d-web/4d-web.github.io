@@ -1,15 +1,53 @@
-@import 'src/assets/css/common/vars.module';
+@use '../../assets/css/common/vars.module';
 
-.title {
-  span {
-    color: var(--dataColorAccent);
-  }
-  max-width: 900px;
+.greetingBox {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-// mobile
-@media (max-width: 768px) {
-  .title {
-    max-width: 200px;
+.greetingImg {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.greetingText {
+  position: relative;
+  z-index: 2;
+}
+
+.contentItem {
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  padding-top: 240px;
+  gap: 80px;
+}
+
+.infoWrapper {
+  .portfolioContent {
+    display: flex;
+    gap: 80px;
+    padding-top: 100px;
+  }
+
+  .infoItem {
+    background: var(--dataColorLight);
+    box-shadow: 0px 14px 29px rgba(85.82, 85.82, 85.82, 0.25);
+    border-radius: 20px;
+    padding: 36px;
+    position: relative;
+
+    .infoHeader {
+      padding-bottom: 20px;
+      padding-top: 100px;
+    }
+
+    .skeletImg {
+      top: -100px;
+      position: absolute;
+    }
   }
 }

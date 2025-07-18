@@ -1,18 +1,22 @@
 # Settings project
-_________________
+
+---
+
 [Format file](https://www.markdownguide.org/basic-syntax)
-_________________
+
+---
 
 ## Init project
 
-```
-npm init
-yarn start
-```
+- `npm i`
+- `npm i yarn -g`
+- `yarn dev`
 
 ### ESLINT
+
 > Увага!
-Створення файлу налаштування та додавання файлу prettier:
+> Створення файлу налаштування та додавання файлу prettier:
+
 - `npx eslint --init`
 - `yarn add -D eslint-plugin-prettier`
 - `yarn add -D eslint-config-prettier`
@@ -20,4 +24,3 @@ yarn start
 ![img.png](src/ui/images/icons/favicon.png)
 
 ### GIT
-

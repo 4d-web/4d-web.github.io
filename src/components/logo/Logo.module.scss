@@ -1,0 +1,39 @@
+@use '../../assets/css/common/vars.module';
+
+/* ========= Header ========= */
+.logo {
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+
+  h2 {
+    font-size: 72px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  a,
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    white-space: inherit;
+  }
+
+  a {
+    color: var(--textColor);
+  }
+
+  & span {
+    color: var(--dataColorDarkMain);
+  }
+
+  @media (max-width: 768px) {
+    h2,
+    a,
+    span {
+      font-size: 36px !important;
+    }
+  }
+}

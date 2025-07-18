@@ -1,0 +1,30 @@
+@use '../../assets/css/common/vars.module';
+
+.portfolioWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  gap: 60px;
+
+  .portfolioHeader {
+    display: flex;
+  }
+
+  .portfolioContent {
+    display: flex;
+    min-height: 350px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .portfolioWrapper {
+    .portfolioContent {
+      flex-direction: column;
+      align-items: unset;
+    }
+  }
+}

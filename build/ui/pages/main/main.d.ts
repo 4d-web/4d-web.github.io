@@ -1,6 +1,6 @@
 export default class main {
-    show: () => void;
-    STORE: {};
-    constructor();
+  show: () => void;
+  STORE: {};
+  constructor();
 }
-//# sourceMappingURL=main.d.ts.map
+// # sourceMappingURL=mainContainer.d.ts.map

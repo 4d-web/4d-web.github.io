@@ -1,10 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # testing
-/gitignore
-/node_modules
-/app/node_modules
-/.idea
+node_modules/
+.idea/
+.history/
+dist/
 
 # misc
 .DS_Store
@@ -12,6 +12,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+package-lock.json
+yarn.lock
 
 npm-debug.log*
 yarn-debug.log*

@@ -4,8 +4,9 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import en from './assets/locales/en/translation.json';
 import ua from './assets/locales/ua/translation.json';
-import { getCookie, setCookie } from './utils/main';
 import { ELangValue } from './interfacesAndEnums/enums';
+import { createSlice } from '@reduxjs/toolkit';
+import { util } from './utils/main';
 
 i18next
   .use(Backend)
@@ -29,45 +30,17 @@ i18next
   });
 
 export default i18next;
-// setCookie('firstLoad', true);
-// let firstLoad = true;
-console.log(!getCookie('firstLoad'));
-if (!getCookie('firstLoad')) {
-  i18next.changeLanguage(ELangValue.EN);
-  setCookie('i18next', ELangValue.EN);
-  setCookie('firstLoad', true);
-  console.log(getCookie('firstLoad'));
-}
 
-// export default data.then((value) => {
-//   // console.log(i18n.t(key ? key : 'about_me'));
-//   return value;
-// });
+const languageFromCookie = util.getCookie('i18next');
+const initialLanguage = languageFromCookie || ELangValue.EN;
 
-// export default async (key: string) => {
-//   const get = data.then((value) => {
-//     console.warn(value(key));
-//     return value(key);
-//   });
-//   return get;
-// };
-
-// const runApp = async (lan) => {
-//   console.log('TRUE');
-//   await i18next.use(LanguageDetector).init({
-//     debug: false,
-//     supportedLngs: ['ua', 'en'],
-//     fallbackLng: lan,
-//     detection: {
-//       order: ['cookie', 'localStorage', 'htmlTag', 'path', 'subdomein'],
-//       caches: ['cookie'],
-//     },
-//     resources: {
-//       ua,
-//       en,
-//     },
-//   });
-// };
-// runApp('en');
-//
-// export default i18next;
+export const languageSlice = createSlice({
+  name: 'language',
+  initialState: { value: initialLanguage },
+  reducers: {
+    setLanguage: (state, action) => {
+      state.value = action.payload;
+      util.setCookie('i18next', action.payload, { 'max-age': 3600, path: '/' });
+    },
+  },
+});
