@@ -23,7 +23,8 @@ module.exports = {
   entry: PATHS.src,
   output: {
     filename: `${PATHS.assets}/js/[name].js`,
-    path: PATHS.dist,
+    path: path.resolve(__dirname, './dist'),
+    publicPath: 'dist/',
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.jsx', '.json'],
@@ -38,7 +39,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       hash: false,
       template: `${PATHS.src}/index.html`,
-      filename: './index.html',
+      filename: path.resolve(__dirname, './index.html'),
     }),
     new CopyWebpackPlugin({
       patterns: [
