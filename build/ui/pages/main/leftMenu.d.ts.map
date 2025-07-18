@@ -1,1 +1,1 @@
-{"version":3,"file":"leftMenu.d.ts","sourceRoot":"","sources":["../../../../src/ui/pages/main/leftMenu.ts"],"names":[],"mappings":"AAIA,MAAM,CAAC,OAAO,OAAO,IAAI;IACvB,IAAI,EAAE,MAAM,IAAI,CAAC;;CAoBlB"}
+{"version":3,"file":"leftMenu.d.ts","sourceRoot":"","sources":["../../../../src/ui/pages/mainContainer/leftMenu.ts"],"names":[],"mappings":"AAIA,MAAM,CAAC,OAAO,OAAO,IAAI;IACvB,IAAI,EAAE,MAAM,IAAI,CAAC;;CAoBlB"}
