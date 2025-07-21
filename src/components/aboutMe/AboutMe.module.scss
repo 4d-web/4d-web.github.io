@@ -51,3 +51,41 @@
     }
   }
 }
+
+.resumeWrapper {
+  .resumeItem {
+    position: relative;
+
+    .resumeDownload {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20%;
+      font-size: 40px;
+      font-weight: bold;
+      color: var(--dataColorLight);
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .resumeWrapper .resumeItem .resumeDownload {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .resumeWrapper .resumeItem .resumeDownload {
+    font-size: 22px;
+  }
+
+  .greetingImg {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .resumeWrapper .resumeItem .resumeDownload {
+    font-size: 16px;
+  }
+}

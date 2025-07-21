@@ -20,6 +20,12 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+
+        .LINK {
+          display: flex;
+          align-self: center;
+          color: var(--dataColorDark);
+        }
       }
     }
   }
@@ -42,5 +48,9 @@
 @media (max-width: 768px) {
   .footerWrapper {
     padding: var(--footerPaddingMobile);
+
+    .footerContent .footerItems .footerRight {
+      justify-content: space-between;
+    }
   }
 }

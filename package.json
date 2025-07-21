@@ -19,6 +19,7 @@
   "homepage": "https://github.com/4d-web/4d-web.github.io#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
+    "dotenv-webpack": "^8.1.1",
     "framer-motion": "^12.23.6",
     "i18next": "^21.8.11",
     "i18next-browser-languagedetector": "^6.1.4",

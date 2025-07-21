@@ -37,7 +37,7 @@ export default function Footer(props: IFooter) {
                   </h3>
                 </div>
                 <div className={cn([cStyles.footerRight])}>
-                  <Button type={EButtonType.LINK} href="#" text={t('footer.terms')} />
+                  <Button isLink={true} type={EButtonType.LINK} href="#" text={t('footer.terms')} />
                   <Logo styles={{ fontSize: '40px' }} />
                 </div>
               </div>

@@ -32,15 +32,22 @@
     "home.progressiveAndUnique": "Progressive and Unique",
     "home.webProducts": "Web Products",
     "home.developmentWebsite": "Website and application \ndevelopment",
+    "home.startButton": "Start cooperation",
     "home.menu.contacts": "Contacts",
     "home.menu.portfolio": "Portfolio",
     "home.menu.howIWork": "How I work",
     "portfolio.empty": "While it's empty here",
     "portfolio.services": "Services",
+    "services.development": "Website and application development",
+    "services.developmentMore": "Creation of single-page sites, catalog sites, stores, applications",
+    "services.optimization": "Fixes and optimizations",
+    "services.optimizationMore": "Checking your site, optimizing and fixing errors",
+    "services.design": "Design",
+    "services.designMore": "Creating a unique design for your app or website",
     "footer.contacts": "Contacts",
     "footer.email": "Email",
     "footer.terms": "Terms and conditions",
-    "more.header": "Look what I can do",
-    "more.download": "Download my full resume"
+    "resume.header": "Look what I can do",
+    "resume.download": "Download my full resume"
   }
 }

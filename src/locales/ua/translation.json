@@ -45,15 +45,22 @@
     "home.progressiveAndUnique": "Прогресивні та Унікальні",
     "home.webProducts": "Web Продукти",
     "home.developmentWebsite": "Розробка Web-сайтів \nта додатків",
+    "home.startButton": "Почати співпрацю",
     "home.menu.contacts": "Контакти",
     "home.menu.portfolio": "Портфоліо",
     "home.menu.howIWork": "Як я працюю",
     "portfolio.empty": "Поки тут пусто",
     "portfolio.services": "Послуги",
+    "services.development": "Розробка сайтів та додатків",
+    "services.developmentMore": "Створення односторінкових сайтів, сайтів каталогів, магазинів, додатків",
+    "services.optimization": "Виправлення та оптимізація",
+    "services.optimizationMore": "Перевірка вашого сайта, оптимізація та виправлення помилок",
+    "services.design": "Дизайн",
+    "services.designMore": "Створення унікального дизайну для вашого додатку або сайту",
     "footer.contacts": "Контакти",
     "footer.email": "Електронна адресса",
     "footer.terms": "Умови та правила",
-    "more.header": "Поглянь що я вмію",
-    "more.download": "Завантаж моє повне резюме"
+    "resume.header": "Поглянь що я вмію",
+    "resume.download": "Завантаж моє повне резюме"
   }
 }

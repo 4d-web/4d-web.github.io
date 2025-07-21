@@ -5,13 +5,15 @@ const CompressionPlugin = require('compression-webpack-plugin');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-isProductionBuild = false;
+isProductionBuild = true;
+
 const PATHS = {
-  src: path.join(__dirname, './src'),
-  dist: path.join(__dirname, './dist'),
+  src: path.resolve(__dirname, './src'),
+  dist: path.resolve(__dirname, './dist'),
   assets: 'src/assets',
 };
 
@@ -22,9 +24,9 @@ module.exports = {
 
   entry: PATHS.src,
   output: {
+    path: PATHS.dist,
     filename: `${PATHS.assets}/js/[name].js`,
-    path: path.resolve(__dirname, './dist'),
-    publicPath: 'dist/',
+    publicPath: isProductionBuild ? 'dist/' : undefined,
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.jsx', '.json'],
@@ -33,13 +35,14 @@ module.exports = {
     },
   },
   plugins: [
+    new Dotenv(),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}/css/[name].css`,
     }),
     new HTMLWebpackPlugin({
       hash: false,
       template: `${PATHS.src}/index.html`,
-      filename: path.resolve(__dirname, './index.html'),
+      filename: isProductionBuild ? path.resolve(__dirname, './index.html') : './index.html',
     }),
     new CopyWebpackPlugin({
       patterns: [

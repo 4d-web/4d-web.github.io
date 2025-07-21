@@ -526,7 +526,6 @@ select:-webkit-autofill:focus {
 
 /* ========= CONTENT ========= */
 body {
-  height: 100vh;
   background: var(--bodyBg);
 }
 
@@ -543,10 +542,6 @@ main {
 
 .contentBox {
   padding-top: 280px;
-
-  @media (max-width: 768px) {
-    padding-top: 60px;
-  }
 }
 
 .contentBoxSection {
@@ -559,9 +554,12 @@ main {
 }
 
 /* MEDIA */
-html {
-  /*    min-width: 1024px;*/
-}
+@media (max-width: 768px) {
+  .veryBig {
+    font-size: var(--fontSizeVeryBigMobile);
+  }
 
-@media screen and (max-width: 1024px) {
+  .contentBox {
+    padding-top: 60px;
+  }
 }
