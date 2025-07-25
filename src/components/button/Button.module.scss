@@ -5,6 +5,7 @@
   color: var(--btnPrimaryColor);
   font-size: 18px;
   min-height: 60px;
+  min-width: 60px;
   padding: 10px 16px;
   display: inline-flex;
   justify-content: center;
@@ -40,6 +41,7 @@
   color: var(--btnSecondaryColor);
   font-size: 18px;
   min-height: 60px;
+  min-width: 60px;
   padding: 10px 16px;
   display: inline-flex;
   justify-content: center;
@@ -68,6 +70,7 @@
   color: var(--dataColorAccent);
   font-size: 18px;
   border: none;
+  transition: var(--btnTransition);
 
   &:not(.disabled):hover,
   &:not(.disabled):active {

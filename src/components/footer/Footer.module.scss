@@ -25,6 +25,11 @@
           display: flex;
           align-self: center;
           color: var(--dataColorDark);
+          text-decoration: unset;
+
+          &:hover {
+            color: var(--dataColorAccent);
+          }
         }
       }
     }

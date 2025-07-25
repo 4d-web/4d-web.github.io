@@ -14,6 +14,13 @@ export enum EAnimaton {
   LETTER_DROP = 'LETTER_DROP',
 }
 
+export enum EImgFormat {
+  WEBP = 'webp',
+  SVG = 'SVG',
+  JPG = 'JPG',
+  PNG = 'PNG',
+}
+
 export enum ERel {
   NOFOLLOW = 'nofollow',
 }

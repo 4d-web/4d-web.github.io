@@ -8,6 +8,7 @@ import Anim from '../anim/Anim';
 import { EAnimaton, EButtonType } from '../../interfacesAndEnums/enums';
 import Logo from '../logo/Logo';
 import Button from '../button/Button';
+import ModalWindow from '../modal/Modal';
 
 export default function Footer(props: IFooter) {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ export default function Footer(props: IFooter) {
     <>
       {isShow ? (
         <Anim animation={EAnimaton.SLIDE_DOWN}>
-          <footer className={cStyles.footerWrapper}>
+          <footer id="footerWrapper" className={cStyles.footerWrapper}>
             <div className={cStyles.footerContent}>
               <p className={cn([styles.veryBig, styles.bold])}>{t('footer.contacts')}</p>
               <div className={cn([cStyles.footerItems])}>
@@ -37,11 +38,14 @@ export default function Footer(props: IFooter) {
                   </h3>
                 </div>
                 <div className={cn([cStyles.footerRight])}>
-                  <Button isLink={true} type={EButtonType.LINK} href="#" text={t('footer.terms')} />
+                  <Button type={EButtonType.LINK} modalKey="terms" text={t('footer.terms')} />
                   <Logo styles={{ fontSize: '40px' }} />
                 </div>
               </div>
             </div>
+            <ModalWindow name="terms" title={t('footer.terms')}>
+              <p>{t('footer.termsMore')}</p>
+            </ModalWindow>
           </footer>
         </Anim>
       ) : null}

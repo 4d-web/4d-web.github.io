@@ -1,12 +1,31 @@
 @use 'reset.module';
 @use '../../assets/css/common/vars.module';
 @use '../../assets/css/font.module';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* MAIN STYLES */
 .mainStyle {
-  color: var(--textColor);
-  background: var(--bodyBg);
-  font-size: var(--fontSizeText);
+  overflow: hidden;
+  position: relative;
+
+  .mainBg {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    z-index: -1;
+
+    & > div {
+      height: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
 }
 
 .leftImage {
@@ -39,13 +58,13 @@ span,
 div,
 .veryBig {
   color: inherit;
-  font-family: var(--fontMain), sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button,
 input,
 textarea {
-  font-family: var(--fontMain), sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .semi {

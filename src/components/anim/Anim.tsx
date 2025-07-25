@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { EAnimaton } from '../../interfacesAndEnums/enums';
 import { IAnim } from '../../interfacesAndEnums/interfaces';
+import cStyles from './Anim.module.scss';
+import { cn } from '../../utils/main';
 
 const variants = {
   [EAnimaton.FADE_IN]: {
@@ -41,7 +43,7 @@ export default function Anim(props: IAnim): React.Component {
   }
 
   return (
-    <>
+    <div className={cn([cStyles.animWrapper])}>
       <motion.div
         className={props?.clsses}
         initial={selected.initial}
@@ -51,6 +53,6 @@ export default function Anim(props: IAnim): React.Component {
       >
         {props.children ? props.children : null}
       </motion.div>
-    </>
+    </div>
   );
 }

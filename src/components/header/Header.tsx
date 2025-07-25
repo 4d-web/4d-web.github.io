@@ -4,12 +4,13 @@ import cStyles from './Header.module.scss';
 import { cn } from '../../utils/main';
 import { IElementConfig, IToggleItem } from '../../interfacesAndEnums/interfaces';
 import ToggleGroup from '../toggle/ToggleGroup';
-import { ELang, ELangValue, ETheme } from '../../interfacesAndEnums/enums';
+import { EButtonType, ELang, ELangValue, ETheme } from '../../interfacesAndEnums/enums';
 import Logo from '../logo/Logo';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLanguage } from '../../store';
 import Anim from '../anim/Anim';
 import { EAnimaton } from '../../interfacesAndEnums/enums';
+import Button from '../button/Button';
 
 export default function Header(props: IElementConfig) {
   const { i18n } = useTranslation();
@@ -56,13 +57,28 @@ export default function Header(props: IElementConfig) {
 
                 <ul className={cn([cStyles.navItem, cStyles.right])}>
                   <li>
-                    <a href="#">{t('home.menu.howIWork')}</a>
+                    <Button
+                      isLink={true}
+                      href="#workWrapper"
+                      text={t('home.menu.howIWork')}
+                      type={EButtonType.LINK}
+                    />
                   </li>
                   <li>
-                    <a href="#">{t('home.menu.contacts')}</a>
+                    <Button
+                      isLink={true}
+                      href="#footerWrapper"
+                      text={t('home.menu.contacts')}
+                      type={EButtonType.LINK}
+                    />
                   </li>
                   <li>
-                    <a href="#">{t('home.menu.portfolio')}</a>
+                    <Button
+                      isLink={true}
+                      href="#siteWrapper"
+                      text={t('home.menu.portfolio')}
+                      type={EButtonType.LINK}
+                    />
                   </li>
                 </ul>
 

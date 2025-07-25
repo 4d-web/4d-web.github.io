@@ -9,6 +9,7 @@ import {
   ERel,
   EAnimaton,
   EToggleType,
+  EImgFormat,
 } from './enums';
 
 export interface IElementConfig {
@@ -47,6 +48,7 @@ export interface IModal {
 }
 
 export interface IPortfolio {
+  id?: string;
   header?: string;
   galeryItems?: [];
   classes?: string;
@@ -76,7 +78,6 @@ export interface IButton {
   modalKey?: string;
   isLink?: boolean;
   isAnchor?: boolean;
-  isNotLocalPage?: boolean;
   isDisabled?: boolean;
 }
 
@@ -105,6 +106,9 @@ export interface ISkelet {
   width?: string;
   height?: string;
   children?: React.PropsWithChildren | React.ReactNode;
+  classes?: string;
+  imgName?: string;
+  imgFormat?: EImgFormat | string;
 }
 
 export interface IToggleGroup {

@@ -14,7 +14,7 @@ export default function Portfolio(props: IPortfolio): React.component {
   const { t } = useTranslation();
 
   return (
-    <section className={cn([cStyles.portfolioWrapper, props.classes])}>
+    <section id={props?.id} className={cn([cStyles.portfolioWrapper, props.classes])}>
       {props?.header ? (
         <Anim animation={EAnimaton.SLIDE_DOWN}>
           <div className={cn([cStyles.portfolioHeader, styles.veryBig, styles.bold])}>
@@ -25,29 +25,13 @@ export default function Portfolio(props: IPortfolio): React.component {
 
       <Anim animation={EAnimaton.SLIDE_DOWN}>
         <div className={cn([cStyles.portfolioContent])}>
-          {props?.children ? props.children : t('portfolio.empty')}
+          {props?.children ? (
+            props.children
+          ) : (
+            <div className={cn([cStyles.portfolioEmpty])}>{t('portfolio.empty')}</div>
+          )}
         </div>
       </Anim>
-      {/* <div style={{ marginTop: '20px' }} className={styles.btnGroup}>
-        {appsConfig.map((item, key) => {
-          return (
-            <Button
-              key={key}
-              text={item.name}
-              rel={ERel.NOFOLLOW}
-              onClick={(item) => showApp(item)}
-              title={item.name}
-              href={item.href}
-              type={EButtonType.SECONDARY}
-              target={ETargetLink.SELF}
-              modalKey={item.href}
-              isDisabled={true}
-              isLink={true}
-              isAnchor={true}
-            />
-          );
-        })}
-      </div> */}
     </section>
   );
 }

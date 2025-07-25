@@ -12,6 +12,8 @@ export class util {
     return matches ? decodeURIComponent(matches[1]) : undefined;
   }
 
+  static imgSrc = (name: string, type = 'webp') => `/src/assets/images/main/${name}.${type}`;
+
   static setCookie(name, value, options = {}) {
     options = {
       path: '/',
