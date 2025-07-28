@@ -137,7 +137,11 @@ export default function AboutMe(props: IElementConfig): React.component {
           <Portfolio id="siteWrapper" header={t('portfolio.sites')}></Portfolio>
           <Portfolio id="designWrapper" header={t('portfolio.design')}></Portfolio>
           <Portfolio classes={cn([cStyles.resumeWrapper])} header={t('resume.header')}>
-            <a className={cn([cStyles.resumeLink])} href="/src/files/resume.pdf" target="_blank">
+            <a
+              className={cn([cStyles.resumeLink])}
+              href="https://docs.google.com/document/d/13X65XvANXfjfBnxCv9UMfaAas48awUtosxXA6cjjPbI/edit?usp=sharing"
+              target="_blank"
+            >
               <div className={cn([cStyles.resumeItem])}>
                 {isMobile ? (
                   <Skelet

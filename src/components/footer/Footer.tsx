@@ -34,7 +34,9 @@ export default function Footer(props: IFooter) {
                     {t('footer.email')}
                   </h3>
                   <h3>
-                    <a className={cn([])}>A4Rome@gmail.com</a>
+                    <a href="mailto:a4rome@gmail.com" className={cn([])}>
+                      A4Rome@gmail.com
+                    </a>
                   </h3>
                 </div>
                 <div className={cn([cStyles.footerRight])}>

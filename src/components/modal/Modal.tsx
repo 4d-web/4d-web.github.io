@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { closeModal } from '../../store';
 import Button from '../button/Button';
 import { IModal } from '../../interfacesAndEnums/interfaces';
+import cStyles from './Modal.module.scss';
+import { cn } from '../../utils/main';
 
 Modal.setAppElement('#root');
 
@@ -35,37 +37,29 @@ export default function ModalWindow(props: IModal) {
       isOpen={isOpen}
       onRequestClose={handleClose}
       contentLabel="Modal"
+      shouldCloseOnOverlayClick={true}
+      htmlOpenClassName="noScroll"
+      portalClassName={cn(['ReactModalPortal', cStyles.modal])}
+      overlayClassName={cn(cStyles.modalOverlay)}
+      className={cn(cStyles.modalContent)}
       style={{
         content: {
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          padding: '2rem',
           transition: 'opacity 0.3s ease, transform 0.3s ease',
           opacity: animate ? 1 : 0,
           transform: animate ? 'scale(1)' : 'scale(0.95)',
         },
         overlay: {
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 999,
           transition: 'opacity 0.3s ease',
           opacity: animate ? 1 : 0,
         },
       }}
     >
-      <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
+      <div className={cn([cStyles.modalWrapper])}>
+        <div className={cn([cStyles.modalHeader])} style={{}}>
           {props?.title ? <h2>{props.title}</h2> : null}
           <Button icon="BsXLg" onClick={handleClose} />
         </div>
-        {props.children ? props.children : null}
+        <div className={cn([cStyles.modalBody])}>{props.children ? props.children : null}</div>
       </div>
     </Modal>
   );

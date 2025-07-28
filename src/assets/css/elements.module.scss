@@ -350,6 +350,14 @@ li {
   font-weight: 600;
 }
 
+.hidden {
+  display: none;
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
 .important {
   text-indent: 0;
   border-radius: 11px;
@@ -536,10 +544,6 @@ select:-webkit-autofill:focus {
   }
 }
 /* ========= MENU END ========= */
-
-.hidden {
-  display: none;
-}
 
 /* MAIN STYLES END */
 
