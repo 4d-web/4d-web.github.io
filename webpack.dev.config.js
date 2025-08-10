@@ -10,7 +10,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   // contentBase: baseWebpackConfig.externals.paths.dist,
   devServer: {
     static: __dirname, // baseWebpackConfig.externals.paths.dist   __dirname
-    port: 8081,
+    port: 8082,
     open: false,
     compress: true,
   },

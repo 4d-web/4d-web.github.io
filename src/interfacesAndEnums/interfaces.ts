@@ -50,6 +50,7 @@ export interface IModal {
 export interface IPortfolio {
   id?: string;
   header?: string;
+  subHeader?: string;
   galeryItems?: [];
   classes?: string;
   children?: React.PropsWithChildren | React.ReactNode;
@@ -79,6 +80,7 @@ export interface IButton {
   isLink?: boolean;
   isAnchor?: boolean;
   isDisabled?: boolean;
+  children?: React.PropsWithChildren | React.ReactNode;
 }
 
 export interface IAnim {

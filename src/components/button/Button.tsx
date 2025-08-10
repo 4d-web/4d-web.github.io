@@ -66,6 +66,7 @@ export default function Button(props: IButton): React.Component {
           onClick={btnClick}
         >
           {props?.text}
+          {props?.children}
         </a>
       ) : (
         <button

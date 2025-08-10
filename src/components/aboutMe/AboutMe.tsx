@@ -6,7 +6,7 @@ import { IElementConfig } from '../../interfacesAndEnums/interfaces';
 import { useTranslation } from 'react-i18next';
 import Button from '../button/Button';
 import Anim from '../anim/Anim';
-import { EAnimaton } from '../../interfacesAndEnums/enums';
+import { EAnimaton, EButtonType, ETargetLink } from '../../interfacesAndEnums/enums';
 import Skelet from '../skeleton/Skelet';
 import Portfolio from '../portfolio/Portfolio';
 import { useDevice } from '../../utils/hook';
@@ -134,8 +134,62 @@ export default function AboutMe(props: IElementConfig): React.component {
               </div>
             </div>
           </Portfolio>
-          <Portfolio id="siteWrapper" header={t('portfolio.sites')}></Portfolio>
-          <Portfolio id="designWrapper" header={t('portfolio.design')}></Portfolio>
+          <Portfolio
+            id="siteWrapper"
+            classes={cn([cStyles.portWrapper])}
+            header={t('portfolio.sites')}
+            subHeader={t('portfolio.empty')}
+          >
+            <div></div>
+          </Portfolio>
+          <Portfolio
+            id="appsWrapper"
+            classes={cn([cStyles.portWrapper])}
+            header={t('portfolio.apps')}
+            subHeader={t('portfolio.empty')}
+          >
+            <div className={cn([cStyles.portItem])}>
+              <Button
+                isLink={true}
+                href="https://f0rti.github.io/mash/"
+                type={EButtonType.LINK}
+                target={ETargetLink.BLANK}
+              >
+                <div className={cn([cStyles.portHeader])}>{t('portfolio.apps.mash')}</div>
+                <Skelet imgName={'resume-game-mash'} alt="mash" width="250px" height="150px" />
+              </Button>
+            </div>
+            {!isMobile ? (
+              <>
+                <div className={cn([cStyles.portItem])}></div>
+                <div className={cn([cStyles.portItem])}></div>
+              </>
+            ) : null}
+          </Portfolio>
+          <Portfolio
+            id="designWrapper"
+            classes={cn([cStyles.portWrapper])}
+            header={t('portfolio.design')}
+            subHeader={t('portfolio.empty')}
+          >
+            <div className={cn([cStyles.portItem])}>
+              <Button
+                isLink={true}
+                href="https://www.figma.com/design/l4iGsyNrthwzG786iwb4fz/Template-food?node-id=0-1&t=MPxMMnExC5HsA00R-1"
+                type={EButtonType.LINK}
+                target={ETargetLink.BLANK}
+              >
+                <div className={cn([cStyles.portHeader])}>{t('portfolio.design.food')}</div>
+                <Skelet imgName={'resume-design-food'} alt="food" width="250px" height="150px" />
+              </Button>
+            </div>
+            {!isMobile ? (
+              <>
+                <div className={cn([cStyles.portItem])}></div>
+                <div className={cn([cStyles.portItem])}></div>
+              </>
+            ) : null}
+          </Portfolio>
           <Portfolio classes={cn([cStyles.resumeWrapper])} header={t('resume.header')}>
             <a
               className={cn([cStyles.resumeLink])}
