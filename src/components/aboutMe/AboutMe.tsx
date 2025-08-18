@@ -175,6 +175,17 @@ export default function AboutMe(props: IElementConfig): React.component {
             <div className={cn([cStyles.portItem])}>
               <Button
                 isLink={true}
+                href="https://www.figma.com/design/E17Uu6kQVvvlMYtatFI1p0/Courses?node-id=274-78&t=orVvpvUZdfGAE4t1-1"
+                type={EButtonType.LINK}
+                target={ETargetLink.BLANK}
+              >
+                <div className={cn([cStyles.portHeader])}>{t('portfolio.design.glam')}</div>
+                <Skelet imgName={'resume-design-glam'} alt="glam" width="250px" height="150px" />
+              </Button>
+            </div>
+            <div className={cn([cStyles.portItem])}>
+              <Button
+                isLink={true}
                 href="https://www.figma.com/design/l4iGsyNrthwzG786iwb4fz/Template-food?node-id=0-1&t=MPxMMnExC5HsA00R-1"
                 type={EButtonType.LINK}
                 target={ETargetLink.BLANK}
@@ -183,9 +194,24 @@ export default function AboutMe(props: IElementConfig): React.component {
                 <Skelet imgName={'resume-design-food'} alt="food" width="250px" height="150px" />
               </Button>
             </div>
+            <div className={cn([cStyles.portItem])}>
+              <Button
+                isLink={true}
+                href="https://www.figma.com/design/w5u28LwaIZFL1DsF4MMvYz/Sberry?node-id=0-2&t=w1uIwJPGzr7ehwt2-1"
+                type={EButtonType.LINK}
+                target={ETargetLink.BLANK}
+              >
+                <div className={cn([cStyles.portHeader])}>{t('portfolio.design.sberry')}</div>
+                <Skelet
+                  imgName={'resume-design-sberry'}
+                  alt="sberry"
+                  width="250px"
+                  height="150px"
+                />
+              </Button>
+            </div>
             {!isMobile ? (
               <>
-                <div className={cn([cStyles.portItem])}></div>
                 <div className={cn([cStyles.portItem])}></div>
               </>
             ) : null}

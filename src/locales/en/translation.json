@@ -43,6 +43,8 @@
     "portfolio.apps.mash": "Mesh",
     "portfolio.design": "Design",
     "portfolio.design.food": "Food",
+    "portfolio.design.sberry": "Sberry",
+    "portfolio.design.glam": "Glam",
     "work.howIWork": "How I work",
     "work.dataCollection": "Data collection",
     "work.dataCollectionMore": "Determine project requirements and goals",

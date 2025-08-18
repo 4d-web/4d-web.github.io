@@ -9,7 +9,7 @@ const Dotenv = require('dotenv-webpack');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-isProductionBuild = false;
+isProductionBuild = true;
 
 const PATHS = {
   src: path.resolve(__dirname, './src'),
