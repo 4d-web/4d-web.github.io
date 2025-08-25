@@ -1,14 +1,9 @@
 import React from 'react';
-import styles from '../../assets/css/elements.module.scss';
-import { cn } from '../../utils/main';
+import * as styles from '@/assets/css/elements.module.scss';
+import { cn } from '@/utils/main';
 import { useTranslation } from 'react-i18next';
-import { IListProps } from '../../interfacesAndEnums/interfaces';
-import {
-  EListType,
-  EListStyleOl,
-  EListStyleUl,
-  EListStyleText,
-} from '../../interfacesAndEnums/enums';
+import { IListProps } from '@/interfacesAndEnums/interfaces';
+import { EListType, EListStyleOl, EListStyleUl, EListStyleText } from '@/interfacesAndEnums/enums';
 
 export default function List({
   items,

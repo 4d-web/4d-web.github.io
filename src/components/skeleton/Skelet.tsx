@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { cn, util } from '../../utils/main';
-import { EAnimaton, EImgFormat } from '../../interfacesAndEnums/enums';
-import Anim from '../anim/Anim';
-import { ISkelet } from '../../interfacesAndEnums/interfaces';
+import { cn, util } from '@/utils/main';
+import { EAnimaton, EImgFormat } from '@/interfacesAndEnums/enums';
+import Anim from '@/components/anim/Anim';
+import { ISkelet } from '@/interfacesAndEnums/interfaces';
 
 export default function Skelet(props: ISkelet): React.Component {
   const width = props?.width || '20px';

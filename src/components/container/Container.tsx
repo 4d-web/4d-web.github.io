@@ -1,7 +1,6 @@
-import cStyles from './Container.module.scss';
+import * as cStyles from './Container.module.scss';
 import React from 'react';
-import AboutMe from '../aboutMe/AboutMe';
-import { useTranslation } from 'react-i18next';
+import AboutMe from '@/components/aboutMe/AboutMe';
 
 export default function Container(): React.component {
   return (

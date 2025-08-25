@@ -1,8 +1,8 @@
 import React, { useId } from 'react';
 import { useState } from 'react';
-import { cn } from '../../utils/main';
-import styles from '../../assets/css/elements.module.scss';
-import { IRadio } from '../../interfacesAndEnums/interfaces';
+import { cn } from '@/utils/main';
+import * as styles from '@/assets/css/elements.module.scss';
+import { IRadio } from '@/interfacesAndEnums/interfaces';
 
 export default function ToggleGroup(props: IRadio): React.Component {
   const [active, setActive] = useState(props.activeItem);

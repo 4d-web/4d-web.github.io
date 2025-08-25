@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ModalWindow from '../../components/modal/Modal';
+import ModalWindow from '@/components/modal/Modal';
 
 export default function Elf() {
   const { t } = useTranslation();

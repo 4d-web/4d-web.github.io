@@ -1,11 +1,11 @@
 import React from 'react';
-import { IPortfolio } from '../../interfacesAndEnums/interfaces';
-import cStyles from './Portfolio.module.scss';
-import styles from './../../assets/css/elements.module.scss';
+import { IPortfolio } from '@/interfacesAndEnums/interfaces';
+import * as cStyles from './Portfolio.module.scss';
+import * as styles from '@/assets/css/elements.module.scss';
 import { useTranslation } from 'react-i18next';
-import { cn } from '../../utils/main';
-import Anim from '../anim/Anim';
-import { EAnimaton } from '../../interfacesAndEnums/enums';
+import { cn } from '@/utils/main';
+import Anim from '@/components/anim/Anim';
+import { EAnimaton } from '@/interfacesAndEnums/enums';
 
 export default function Portfolio(props: IPortfolio): React.component {
   const { t } = useTranslation();

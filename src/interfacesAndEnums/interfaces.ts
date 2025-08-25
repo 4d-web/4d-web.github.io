@@ -10,6 +10,7 @@ import {
   EAnimaton,
   EToggleType,
   EImgFormat,
+  EModalAppearance,
 } from './enums';
 
 export interface IElementConfig {
@@ -42,8 +43,10 @@ export interface IListProps {
 }
 
 export interface IModal {
+  key?: string;
   name: string;
   title?: string;
+  appearance?: EModalAppearance;
   children?: React.PropsWithChildren | React.ReactNode;
 }
 
@@ -66,7 +69,7 @@ export interface ILogo {
 
 export interface IButton {
   styles?: React.CSSProperties;
-  classes?: string | string[];
+  classes?: string;
   onClick?: (item?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   target?: ETargetLink;
   type?: EButtonType;
@@ -121,4 +124,11 @@ export interface IToggleGroup {
   styleToggle?: string;
   toggleType?: EToggleType;
   onClick: (...item) => void;
+}
+
+export interface IAppConfig {
+  href: string;
+  name: string;
+  tegName?: string;
+  isActive: boolean;
 }

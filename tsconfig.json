@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "module": "commonjs",
     "rootDir": "./src", // ресурси
     "outDir": "./build", // куди збирати
@@ -8,12 +12,12 @@
     "target": "ES6",
     "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost", "ES2016.Array.Include"],
     "jsx": "react-jsx",
-    "declaration": true, /* Генерує відповідний файл '.d.ts'. */
-    "declarationMap": true, /* Генерує вихідну карту для кожного відповідного файлу '.d.ts'. */
-    "sourceMap": true, /* Генерує відповідний файл '.map'. */
-    "alwaysStrict": true, /* Розбирати в строгому режимі та видавати "use strict" для кожного вихідного файлу. */
-    "allowSyntheticDefaultImports": true, /* Дозволити імпорт за замовчуванням з модулів без експорту за замовчуванням. Це не впливає на видачу коду, лише перевірку типу. */
-    "esModuleInterop": true,
+    "declaration": true /* Генерує відповідний файл '.d.ts'. */,
+    "declarationMap": true /* Генерує вихідну карту для кожного відповідного файлу '.d.ts'. */,
+    "sourceMap": true /* Генерує відповідний файл '.map'. */,
+    "alwaysStrict": true /* Розбирати в строгому режимі та видавати "use strict" для кожного вихідного файлу. */,
+    "allowSyntheticDefaultImports": true /* Дозволити імпорт за замовчуванням з модулів без експорту за замовчуванням. Це не впливає на видачу коду, лише перевірку типу. */,
+    "esModuleInterop": true
     // "allowJs": true, /* Дозволяє компілювати файли javascript. */
     // "checkJs": правда, /* Повідомити про помилки у файлах .js. */
     // "jsx": "preserve", /* Вкажіть генерацію коду JSX: 'preserve', 'react-native' або 'react'. */
@@ -62,14 +66,6 @@
     //    "дом"
     // ],
   },
-  //  "include": ["src/**/*"],
-  //  "exclude": ["node_modules", "**/*.spec.ts"]
-  "include": [
-    "src",
-    "stories",
-    // "declaration.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

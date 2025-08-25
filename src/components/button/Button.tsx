@@ -1,13 +1,14 @@
-import React, { useId } from 'react';
-import { cn } from '../../utils/main';
-import styles from '../../assets/css/elements.module.scss';
-import сStyles from './Button.module.scss';
-import { ETargetLink } from '../../interfacesAndEnums/enums';
+import React from 'react';
+import { useId } from 'react';
+import { cn } from '@/utils/main';
+import * as styles from '@/assets/css/elements.module.scss';
+import * as cStyles from './Button.module.scss';
+import { ETargetLink } from '@/interfacesAndEnums/enums';
 import { useDispatch } from 'react-redux';
-import { openModal } from '../../store';
-import { IButton } from '../../interfacesAndEnums/interfaces';
+import { openModal } from '@/store';
+import { IButton } from '@/interfacesAndEnums/interfaces';
 import { animate } from 'framer-motion';
-import Icon from '../icon/Icon';
+import Icon from '@/components/icon/Icon';
 
 export default function Button(props: IButton): React.Component {
   // TODO: Simplify component
@@ -55,8 +56,8 @@ export default function Button(props: IButton): React.Component {
           title={props?.title}
           styles={props?.styles}
           className={cn([
-            props?.type ? props.type : сStyles.LINK,
-            props?.isDisabled ? styles.disabled : undefined,
+            props?.type ? props.type : cStyles.LINK,
+            props?.isDisabled ? 'disabled' : undefined,
             props?.classes,
           ])}
           href={link}
@@ -74,8 +75,8 @@ export default function Button(props: IButton): React.Component {
           title={props?.title}
           className={cn([
             styles.btn,
-            props?.type ? props.type : сStyles.PRIMARY,
-            props?.isDisabled ? styles.disabled : undefined,
+            props?.type ? props.type : cStyles.PRIMARY,
+            props?.isDisabled ? 'disabled' : undefined,
             props?.classes,
           ])}
           disabled={props.isDisabled}
@@ -83,6 +84,7 @@ export default function Button(props: IButton): React.Component {
         >
           {icon ? <Icon name={icon} /> : null}
           {props?.text}
+          {props?.children}
         </button>
       )}
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../../assets/css/elements.module.scss';
-import { cn } from '../../utils/main';
-import Skelet from '../skeleton/Skelet';
+import * as styles from '@/assets/css/elements.module.scss';
+import { cn } from '@/utils/main';
+import Skelet from '@/components/skeleton/Skelet';
 
 export default function MainBox(props): React.Component {
   return (

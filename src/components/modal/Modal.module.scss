@@ -1,6 +1,16 @@
 @use '../../assets/css/common/vars.module';
 
 .modal {
+  &.FULLSCREEN {
+    .modalOverlay {
+      padding: 0;
+
+      .modalContent {
+        border-radius: 0;
+      }
+    }
+  }
+
   .modalOverlay {
     padding: 4rem;
     position: fixed;
@@ -29,6 +39,7 @@
 
         .modalBody {
           overflow: auto;
+          height: 100%;
         }
       }
     }

@@ -1,14 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import cStyles from './Footer.module.scss';
-import styles from './../../assets/css/elements.module.scss';
-import { cn } from '../../utils/main';
-import { IFooter } from '../../interfacesAndEnums/interfaces';
-import Anim from '../anim/Anim';
-import { EAnimaton, EButtonType } from '../../interfacesAndEnums/enums';
-import Logo from '../logo/Logo';
-import Button from '../button/Button';
-import ModalWindow from '../modal/Modal';
+import * as cStyles from './Footer.module.scss';
+import * as styles from '@/assets/css/elements.module.scss';
+import { cn } from '@/utils/main';
+import { IFooter } from '@/interfacesAndEnums/interfaces';
+import Anim from '@/components/anim/Anim';
+import { EAnimaton, EButtonType } from '@/interfacesAndEnums/enums';
+import Logo from '@/components/logo/Logo';
+import Button from '@/components/button/Button';
+import ModalWindow from '@/components/modal/Modal';
+import Apps from '@/components/apps/Apps';
 
 export default function Footer(props: IFooter) {
   const { t } = useTranslation();
@@ -23,14 +24,7 @@ export default function Footer(props: IFooter) {
               <p className={cn([styles.veryBig, styles.bold])}>{t('footer.contacts')}</p>
               <div className={cn([cStyles.footerItems])}>
                 <div>
-                  <h3
-                    className={cn([
-                      cStyles.footerText,
-                      styles.semiBold,
-                      styles.textDarkMain,
-                      styles.mth,
-                    ])}
-                  >
+                  <h3 className={cn([styles.semiBold, styles.textDarkMain, styles.mth])}>
                     {t('footer.email')}
                   </h3>
                   <h3>
@@ -48,6 +42,7 @@ export default function Footer(props: IFooter) {
             <ModalWindow name="terms" title={t('footer.terms')}>
               <p>{t('footer.termsMore')}</p>
             </ModalWindow>
+            <Apps />
           </footer>
         </Anim>
       ) : null}

@@ -9,13 +9,15 @@ const Dotenv = require('dotenv-webpack');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-isProductionBuild = true;
+isProductionBuild = false;
 
 const PATHS = {
   src: path.resolve(__dirname, './src'),
   dist: path.resolve(__dirname, './dist'),
   assets: 'src/assets',
 };
+
+const PATH = isProductionBuild ? PATHS.dist : PATHS.src;
 
 module.exports = {
   externals: {
@@ -29,8 +31,9 @@ module.exports = {
     publicPath: isProductionBuild ? 'dist/' : undefined,
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.jsx', '.json'],
+    extensions: ['.js', '.ts', '.tsx', '.jsx', '.json', '.scss'],
     alias: {
+      '@': PATH,
       assets: path.resolve(__dirname, '../assets'),
     },
   },
@@ -50,17 +53,8 @@ module.exports = {
           from: `${PATHS.src}/assets/images`,
           to: `${PATHS.assets}/images`,
         },
-        // {
-        //   from: `${PATHS.src}/assets/fonts`,
-        //   to: `${PATHS.assets}/fonts`,
-        // },
       ],
     }),
-    // new CompressionPlugin({
-    //   test: /\.tsx(\?.*)?$/i,
-    // }),
-    // new CompressionPlugin(),
-    // new BundleAnalyzerPlugin(),
   ],
   module: {
     rules: [
@@ -70,72 +64,42 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.(png|jpg|svg|gif)$/,
-        loader: 'file-loader',
+        test: /\.(png|jpg|svg|gif)$/i,
+        type: 'asset/resource',
         generator: {
-          filename: '[name].[ext]',
-          outputPath: 'assets/img/',
+          filename: 'assets/img/[name][ext]',
         },
       },
-      // {
-      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[ext]',
-      //         outputPath: 'fonts/',
-      //       },
-      //     },
-      //   ],
-      // },
-      // {
-      //   test: /\.(woff2?|ttf|otf|eot|svg)$/,
-      //   exclude: /node_modules/,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: '[path][name].[ext]',
-      //   },
-      // },
-      // {
-      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: '[name].[ext]',
-      //   },
-      // },
-      // {
-      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      //   type: `${PATHS.src}/assets/fonts`,
-      //   dependency: { not: ['url'] },
-      // },
-      // {
-      //   test: /\.(ttf|woff|woff2|eot|mp3)$/,
-      //   loader: 'file-loader',
-      //   generator: {
-      //     filename: '[path][name][ext]',
-      //     outputPath: 'assets/fonts/',
-      //   },
-      // },
       {
-        test: /\.(sc|c)ss$/i,
+        test: /\.css$/i,
+        include: /node_modules/,
         use: [
-          // 'style-loader',
-          // MiniCssExtractPlugin.loader,
-          { loader: isProductionBuild ? MiniCssExtractPlugin.loader : 'style-loader' }, // щоб ввести результат в DOM як стильовий блок
-          // { loader: 'css-modules-typescript-loader' }, // to generate a .d.ts
+          { loader: isProductionBuild ? MiniCssExtractPlugin.loader : 'style-loader' },
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.module\.s[ac]ss$/i,
+        exclude: /node_modules/,
+        use: [
+          { loader: isProductionBuild ? MiniCssExtractPlugin.loader : 'style-loader' }, // gets the CSS from the JS and injects it into the DOM
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
               modules: {
-                // process.env.NODE_ENV === 'development' ?
                 localIdentName: '[local]', // [local]__[hash:base64:10]
               },
             },
           }, // to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
-          { loader: 'sass-loader', options: { sourceMap: true } }, // to convert SASS to CSS
-          // NOTE: The first build after adding/removing/renaming CSS classes fails, since the newly generated .d.ts typescript module is picked up only later
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              webpackImporter: true,
+            },
+          }, // to convert SASS to CSS
+          { loader: 'typed-css-modules-loader' }, // to generate a .d.ts
         ],
       },
     ],

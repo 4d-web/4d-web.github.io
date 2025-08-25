@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { EAnimaton } from '../../interfacesAndEnums/enums';
-import { IAnim } from '../../interfacesAndEnums/interfaces';
-import cStyles from './Anim.module.scss';
-import { cn } from '../../utils/main';
+import { EAnimaton } from '@/interfacesAndEnums/enums';
+import { IAnim } from '@/interfacesAndEnums/interfaces';
+import * as cStyles from './Anim.module.scss';
+import { cn } from '@/utils/main';
 
 const variants = {
   [EAnimaton.FADE_IN]: {

@@ -67,3 +67,7 @@ export enum EListStyleOl {
 export enum EListStyleText {
   NORMAL = 'normal',
 }
+
+export enum EModalAppearance {
+  FULLSCREEN = 'FULLSCREEN',
+}

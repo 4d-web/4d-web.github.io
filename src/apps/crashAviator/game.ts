@@ -9,10 +9,9 @@ import {
   ICrashAviatorData,
 } from '../../interfacesAndEnums/apps';
 import i18next from './../../language';
+import html from '@/apps/crashAviator';
 
 const t = i18next.t;
-
-export default crashAviator;
 
 export enum EInputsName {
   BET = 'bet',
@@ -25,7 +24,49 @@ type Param = {
   local: string;
 };
 
-function crashAviator(): void {
+// if (!document.getElementById('content-crashAviator')) {
+//   console.error(
+//     'Element with id "content-crashAviator" not found. Please ensure the element exists in the DOM.'
+//   );
+//   const div = document.createElement('div');
+//   div.id = 'content-crashAviator';
+//   document.body.appendChild(div);
+// }
+
+// if (!document.querySelector('crash-aviator')) {
+//   const div = document.createElement('crash-aviator');
+//   div.id = 'content-crashAviator';
+//   document.body.appendChild(div);
+// }
+
+class crashAviatorClass extends HTMLElement {
+  gameWrapper = undefined;
+
+  constructor() {
+    super();
+    this!.innerHTML = html;
+    this.gameWrapper = this.querySelector('#GameWrapper');
+    console.log(this.gameWrapper);
+  }
+
+  connectedCallback() {
+    // console.log(html);
+
+    this.startGame();
+  }
+
+  startGame() {
+    console.log('Game started!');
+  }
+}
+
+function ready() {
+  customElements.define('game-crash-aviator', crashAviatorClass);
+}
+
+document.addEventListener('DOMContentLoaded', ready);
+
+export default function crashAviator(): void {
   const gameConfig = {
     currency: 'UAH',
     maxBet: 4000,
@@ -46,7 +87,7 @@ function crashAviator(): void {
     },
   };
 
-  document.getElementById('content-data').insertAdjacentHTML(
+  document.getElementById('content-crashAviator').insertAdjacentHTML(
     'afterbegin',
     `
             <div id="GameWrapper">
@@ -802,8 +843,8 @@ function crashAviator(): void {
 
     const timerCount = setInterval(() => {
       const gameTimerInt = Math.floor(gameTimer);
-      console.error('gameTimerInt', gameTimerInt);
-      // @ts-ignore
+      console.warn('gameTimerInt', gameTimerInt);
+
       if (gameTimerInt <= 1 || !isGameTimerActive) {
         isActive(crashGameTimer, false);
         isActive(crashGameTimerSegments, false);
@@ -816,7 +857,8 @@ function crashAviator(): void {
 
     const timer = setInterval(() => {
       const gameTimerInt = Math.floor(gameTimer);
-      // console.error('gameTimerInt', gameTimerInt);
+      console.warn('gameTimerInt', gameTimerInt);
+
       if (gameTimer <= startTimerPoint) {
         document.getElementById('crashGameTimerCount').innerHTML = `${gameTimerInt - 1}`;
 
@@ -975,17 +1017,22 @@ function crashAviator(): void {
         break;
     }
 
-    document.getElementById('crashGameСoef').innerHTML = `${gameCoefficient?.toFixed(2)}x`;
-    document.getElementById('PlayersAmountValue').innerHTML = membersCount;
-    document.getElementById('TotalWinningsValue').innerHTML = winSum + ' ' + gameConfig.currency;
-    document.getElementById('BetsAmountValue').innerHTML = sumBets + ' ' + gameConfig.currency;
+    if (!document.getElementById('crashGameСoef')) {
+      stop();
+      return null;
+    } else {
+      document.getElementById('crashGameСoef').innerHTML = `${gameCoefficient?.toFixed(2)}x`;
+      document.getElementById('PlayersAmountValue').innerHTML = membersCount;
+      document.getElementById('TotalWinningsValue').innerHTML = winSum + ' ' + gameConfig.currency;
+      document.getElementById('BetsAmountValue').innerHTML = sumBets + ' ' + gameConfig.currency;
 
-    members ? showMembers(members) : null;
-    dataHistory
-      ? showHistory(dataHistory)
-      : isActive(document.getElementById('historyEmpty'), true);
+      members ? showMembers(members) : null;
+      dataHistory
+        ? showHistory(dataHistory)
+        : isActive(document.getElementById('historyEmpty'), true);
 
-    return data;
+      return data;
+    }
   };
 
   const dataTest: ICrashAviatorData = {
@@ -1024,67 +1071,66 @@ function crashAviator(): void {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const startTest = () => {
-    let randCrash = null;
-    let isRandCrashNumberNotExist = true;
-    let isStopTestGame = false;
-    let wait = 5;
-    let dataNum = 1000;
-    dataTest.tm = 10;
-    dataTest.st = 2;
+  let randCrash = null;
+  let isRandCrashNumberNotExist = true;
+  let isStopTestGame = false;
+  let wait = 5;
+  let dataNum = 1000;
+  let timerGame;
+  dataTest.tm = 10;
+  dataTest.st = 2;
 
-    console.error('Start test');
+  const runTestGame = (i: number) => {
+    if (isStopTestGame) return;
+    console.log('data = ', i, isStopTestGame);
+    dataTest.t = 2;
+    i === 0 ? (dataTest.st = ECrashAviatorStatus.FLY) : null;
 
-    for (let i = 0; i < dataNum; i++) {
-      const runTestGame = () => {
-        if (isStopTestGame) return;
-        console.log('data = ', i, isStopTestGame);
-        dataTest.t = 2;
-        i === 0 ? (dataTest.st = ECrashAviatorStatus.FLY) : null;
+    switch (dataTest.st) {
+      case ECrashAviatorStatus.FLY:
+        console.log('FLY');
+        dataTest.sc = parseFloat(
+          (parseFloat(dataTest.sc.toFixed(2)) + getRandomFloat(0.01, 0.1, 2)).toFixed(2)
+        );
 
-        switch (dataTest.st) {
-          case ECrashAviatorStatus.FLY:
-            console.log('FLY');
-            dataTest.sc = parseFloat(
-              (parseFloat(dataTest.sc.toFixed(2)) + getRandomFloat(0.01, 0.1, 2)).toFixed(2)
-            );
-
-            if (isRandCrashNumberNotExist) {
-              randCrash = getRndInteger(0, 10);
-              isRandCrashNumberNotExist = false;
-            }
-
-            if (i === randCrash) dataTest.st = ECrashAviatorStatus.CRASH;
-            break;
-          case ECrashAviatorStatus.CRASH:
-            if (wait === 0) {
-              dataTest.st = ECrashAviatorStatus.WAITING;
-            } else {
-              wait = parseFloat((wait - 0.1).toFixed(1));
-            }
-            break;
-          case ECrashAviatorStatus.WAITING:
-            if (dataTest.tm === 0) {
-              dataNum = 0;
-              isStopTestGame = true;
-              if (isStopTestGame) return stop();
-            } else {
-              dataTest.tm = parseFloat((dataTest.tm - 0.1).toFixed(1));
-              console.warn('WAITING = ', dataTest.tm);
-            }
-            break;
+        if (isRandCrashNumberNotExist) {
+          randCrash = getRndInteger(0, 10);
+          isRandCrashNumberNotExist = false;
         }
 
-        console.log(dataTest);
-        responseData(dataTest);
-      };
+        if (i === randCrash) dataTest.st = ECrashAviatorStatus.CRASH;
+        break;
+      case ECrashAviatorStatus.CRASH:
+        if (wait === 0) {
+          dataTest.st = ECrashAviatorStatus.WAITING;
+        } else {
+          wait = parseFloat((wait - 0.1).toFixed(1));
+        }
+        break;
+      case ECrashAviatorStatus.WAITING:
+        if (dataTest.tm === 0) {
+          dataNum = 0;
+          isStopTestGame = true;
+          if (isStopTestGame) return stop();
+        } else {
+          dataTest.tm = parseFloat((dataTest.tm - 0.1).toFixed(1));
+          console.warn('WAITING = ', dataTest.tm);
+        }
+        break;
+    }
 
-      const timerGame = setTimeout(runTestGame, i * 100);
+    console.log(dataTest);
+    responseData(dataTest);
+  };
 
-      function stop() {
-        clearTimeout(timerGame);
-        setTimeout(startTest, 100);
-      }
+  function stop() {
+    clearTimeout(timerGame);
+    setTimeout(startTest, 100);
+  }
+
+  const startTest = () => {
+    for (let i = 0; i < dataNum; i++) {
+      timerGame = setTimeout(() => runTestGame(i), i * 100);
     }
   };
 

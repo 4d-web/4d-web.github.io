@@ -1,15 +1,15 @@
 import React from 'react';
-import cStyles from './AboutMe.module.scss';
-import styles from '../../assets/css/elements.module.scss';
-import { cn, util } from '../../utils/main';
-import { IElementConfig } from '../../interfacesAndEnums/interfaces';
+import * as cStyles from '@/components/aboutMe/AboutMe.module.scss';
+import * as styles from '@/assets/css/elements.module.scss';
+import { cn } from '@/utils/main';
+import { IElementConfig } from '@/interfacesAndEnums/interfaces';
 import { useTranslation } from 'react-i18next';
-import Button from '../button/Button';
-import Anim from '../anim/Anim';
-import { EAnimaton, EButtonType, ETargetLink } from '../../interfacesAndEnums/enums';
-import Skelet from '../skeleton/Skelet';
-import Portfolio from '../portfolio/Portfolio';
-import { useDevice } from '../../utils/hook';
+import Button from '@/components/button/Button';
+import { EAnimaton, EButtonType, ETargetLink } from '@/interfacesAndEnums/enums';
+import Portfolio from '@/components/portfolio/Portfolio';
+import Anim from '@/components/anim/Anim';
+import { useDevice } from '@/utils/hook';
+import Skelet from '@/components/skeleton/Skelet';
 
 export default function AboutMe(props: IElementConfig): React.component {
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ export default function AboutMe(props: IElementConfig): React.component {
         <div className={cn([cStyles.greetingBox])}>
           <div className={cn([cStyles.greetingText])}>
             <Anim animation={EAnimaton.SLIDE_DOWN}>
-              <h1 className={cn([styles.veryBig, styles.bold, styles.mthm, styles.lh13])}>
+              <h1 className={cn([styles.veryBig, styles.bold, styles.lh13])}>
                 {t('home.progressiveAndUnique')}
                 <br />
                 <span className={cn([styles.textDarkMain])}>{t('home.webProducts')}</span>
@@ -83,7 +83,7 @@ export default function AboutMe(props: IElementConfig): React.component {
                 <p className={cn([styles.bold, cStyles.workTitle])}>
                   1. {t('work.dataCollection')}
                 </p>
-                <p className={cn([cStyles.workMore])}>{t('work.dataCollectionMore')}</p>
+                <p>{t('work.dataCollectionMore')}</p>
               </div>
             </div>
             <div className={cn([cStyles.workItem])}>
@@ -92,7 +92,7 @@ export default function AboutMe(props: IElementConfig): React.component {
               </div>
               <div className={cn([cStyles.workText])}>
                 <p className={cn([styles.bold, cStyles.workTitle])}>2. {t('work.offer')}</p>
-                <p className={cn([cStyles.workMore])}>{t('work.offerMore')}</p>
+                <p>{t('work.offerMore')}</p>
               </div>
             </div>
             <div className={cn([cStyles.workItem])}>
@@ -103,7 +103,7 @@ export default function AboutMe(props: IElementConfig): React.component {
                 <p className={cn([styles.bold, cStyles.workTitle])}>
                   3. {t('work.technicalSpecification')}
                 </p>
-                <p className={cn([cStyles.workMore])}>{t('work.technicalSpecificationMore')}</p>
+                <p>{t('work.technicalSpecificationMore')}</p>
               </div>
             </div>
             <div className={cn([cStyles.workItem])}>
@@ -112,7 +112,7 @@ export default function AboutMe(props: IElementConfig): React.component {
               </div>
               <div className={cn([cStyles.workText])}>
                 <p className={cn([styles.bold, cStyles.workTitle])}>4. {t('work.development')}</p>
-                <p className={cn([cStyles.workMore])}>{t('work.developmentMore')}</p>
+                <p>{t('work.developmentMore')}</p>
               </div>
             </div>
             <div className={cn([cStyles.workItem])}>
@@ -121,7 +121,7 @@ export default function AboutMe(props: IElementConfig): React.component {
               </div>
               <div className={cn([cStyles.workText])}>
                 <p className={cn([styles.bold, cStyles.workTitle])}>5. {t('work.testing')}</p>
-                <p className={cn([cStyles.workMore])}>{t('work.testingMore')}</p>
+                <p>{t('work.testingMore')}</p>
               </div>
             </div>
             <div className={cn([cStyles.workItem])}>
@@ -130,7 +130,7 @@ export default function AboutMe(props: IElementConfig): React.component {
               </div>
               <div className={cn([cStyles.workText])}>
                 <p className={cn([styles.bold, cStyles.workTitle])}>6. {t('work.start')}</p>
-                <p className={cn([cStyles.workMore])}>{t('work.startMore')}</p>
+                <p>{t('work.startMore')}</p>
               </div>
             </div>
           </Portfolio>
@@ -148,6 +148,12 @@ export default function AboutMe(props: IElementConfig): React.component {
             header={t('portfolio.apps')}
             subHeader={t('portfolio.empty')}
           >
+            <div className={cn([cStyles.portItem])}>
+              <Button modalKey="crashAviator" type={EButtonType.LINK}>
+                <div className={cn([cStyles.portHeader])}>{t('portfolio.apps.crashAviator')}</div>
+                <Skelet imgName={'resume-game-mash'} alt="mash" width="250px" height="150px" />
+              </Button>
+            </div>
             <div className={cn([cStyles.portItem])}>
               <Button
                 isLink={true}

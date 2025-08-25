@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { useSelector, useDispatch } from 'react-redux';
-import { closeModal } from '../../store';
-import Button from '../button/Button';
-import { IModal } from '../../interfacesAndEnums/interfaces';
-import cStyles from './Modal.module.scss';
-import { cn } from '../../utils/main';
+import { closeModal } from '@/store';
+import Button from '@/components/button/Button';
+import { IModal } from '@/interfacesAndEnums/interfaces';
+import * as cStyles from './Modal.module.scss';
+import { cn } from '@/utils/main';
+import crashAviator from '@/apps/crashAviator/game';
+import { EModalAppearance } from '@/interfacesAndEnums/enums';
 
 Modal.setAppElement('#root');
 
@@ -19,7 +21,10 @@ export default function ModalWindow(props: IModal) {
 
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => setAnimate(true), 10);
+      setTimeout(() => {
+        setAnimate(true);
+        crashAviator();
+      }, 10);
     } else {
       setAnimate(false);
     }
@@ -39,7 +44,11 @@ export default function ModalWindow(props: IModal) {
       contentLabel="Modal"
       shouldCloseOnOverlayClick={true}
       htmlOpenClassName="noScroll"
-      portalClassName={cn(['ReactModalPortal', cStyles.modal])}
+      portalClassName={cn([
+        'ReactModalPortal',
+        cStyles.modal,
+        props.appearance === EModalAppearance.FULLSCREEN ? EModalAppearance.FULLSCREEN : '',
+      ])}
       overlayClassName={cn(cStyles.modalOverlay)}
       className={cn(cStyles.modalContent)}
       style={{

@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import cStyles from './Header.module.scss';
-import { cn } from '../../utils/main';
-import { IElementConfig, IToggleItem } from '../../interfacesAndEnums/interfaces';
-import ToggleGroup from '../toggle/ToggleGroup';
-import { EButtonType, ELang, ELangValue, ETheme } from '../../interfacesAndEnums/enums';
-import Logo from '../logo/Logo';
+import * as cStyles from './Header.module.scss';
+import { cn } from '@/utils/main';
+import { IElementConfig, IToggleItem } from '@/interfacesAndEnums/interfaces';
+import ToggleGroup from '@/components/toggle/ToggleGroup';
+import { EButtonType, ELang, ELangValue, ETheme } from '@/interfacesAndEnums/enums';
+import Logo from '@/components/logo/Logo';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLanguage } from '../../store';
-import Anim from '../anim/Anim';
-import { EAnimaton } from '../../interfacesAndEnums/enums';
-import Button from '../button/Button';
+import { setLanguage } from '@/store';
+import Anim from '@/components/anim/Anim';
+import { EAnimaton } from '@/interfacesAndEnums/enums';
+import Button from '@/components/button/Button';
 
 export default function Header(props: IElementConfig) {
   const { i18n } = useTranslation();
